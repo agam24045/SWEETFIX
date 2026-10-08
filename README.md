@@ -9,6 +9,6 @@ This demo searches RecipeDB by recipe title, shows up to 50 live matches, and fe
 3. Run `run_windows.bat`.
 4. Enter a recipe name, such as `Cake`, then enter the number of a match to fetch it.
 
-The launcher prints the folder it is running from. `.env` and `venv` stay on your computer and are ignored by Git.
+`.env` and `venv` stay on your computer and are ignored by Git.
 
 The code currently fetches recipes only; sweetener recommendations are future work.

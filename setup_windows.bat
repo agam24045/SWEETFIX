@@ -2,7 +2,7 @@
 setlocal
 cd /d "%~dp0"
 echo ==========================================
-echo SWEETFIX - WEEK 1 SETUP
+echo SWEETFIX SETUP
 echo ==========================================
 
 python -m venv venv

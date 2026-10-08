@@ -1,9 +1,8 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-echo Running SweetFix from: %CD%
-echo Live RecipeDB search: up to 50 matches
-echo.
+chcp 65001 >nul
+set PYTHONIOENCODING=utf-8
 
 if not exist venv\Scripts\python.exe (
     echo Virtual environment not found.
