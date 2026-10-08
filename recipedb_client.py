@@ -53,17 +53,50 @@ class RecipeDBClient:
                 "RecipeDB returned a response that was not valid JSON."
             ) from exc
 
-    def search_by_title(self, title):
-        """
-        Search RecipeDB by recipe title.
+    def search_by_title(self, title, max_results=50):
+        """Search by title and collect up to max_results across API pages."""
+        path = "/recipe2-api/recipe-bytitle/recipeByTitle"
+        recipes = []
+        seen_ids = set()
+        first_response = None
+        page = 1
 
-        Endpoint from the supplied Postman collection:
-        /recipe2-api/recipe-bytitle/recipeByTitle?title=...
-        """
-        return self._get(
-            "/recipe2-api/recipe-bytitle/recipeByTitle",
-            params={"title": title},
-        )
+        while len(recipes) < max_results:
+            # The supplied RecipeDB example returns ten items per page. Asking
+            # for 50 may work directly; otherwise follow its pagination data.
+            response = self._get(
+                path,
+                params={"title": title, "page": page, "limit": max_results},
+            )
+            if not isinstance(response, dict) or not isinstance(response.get("data"), list):
+                raise RecipeDBError("RecipeDB returned an unexpected search response.")
+
+            if first_response is None:
+                first_response = response
+
+            added = 0
+            for recipe in response["data"]:
+                recipe_id = recipe.get("Recipe_id")
+                if recipe_id in seen_ids:
+                    continue
+                seen_ids.add(recipe_id)
+                recipes.append(recipe)
+                added += 1
+                if len(recipes) == max_results:
+                    break
+
+            pagination = response.get("pagination") or {}
+            total_pages = pagination.get("totalPages")
+            if (
+                not response["data"]
+                or added == 0
+                or not pagination
+                or (isinstance(total_pages, int) and page >= total_pages)
+            ):
+                break
+            page += 1
+
+        return {**first_response, "data": recipes}
 
     def get_recipe_by_id(self, recipe_id):
         """

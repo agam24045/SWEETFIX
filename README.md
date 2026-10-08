@@ -5,7 +5,7 @@ SweetFix is a BTech project exploring sweetener recommendations. The implemented
 ## Current flow
 
 1. Enter a recipe name.
-2. Search RecipeDB by title and choose a matching recipe.
+2. Search RecipeDB by title, collect up to 50 matches across result pages, and choose one.
 3. Fetch the selected recipe by `Recipe_id`.
 4. Print the complete raw JSON response.
 
@@ -28,6 +28,10 @@ python app.py
 ```
 
 The included `setup_windows.bat` and `run_windows.bat` offer a command prompt workflow.
+
+## Show the flow without an API key
+
+Run `demo_offline.bat`, enter `Cake`, and choose `1`. The demo exercises the actual search, selection, and recipe-fetch code using clearly labelled sample responses. It makes no RecipeDB request. Use `run_windows.bat` with a real key to show live data.
 
 ## Offline checks
 

@@ -28,7 +28,7 @@ def main():
             print(json.dumps(search_response, indent=2))
             return
 
-        print("\nMatching recipes:\n")
+        print(f"\nMatching recipes ({len(recipes)} shown):\n")
 
         for number, recipe in enumerate(recipes, start=1):
             recipe_id = recipe.get("Recipe_id", "Unknown")
