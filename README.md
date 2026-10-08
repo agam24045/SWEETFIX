@@ -31,7 +31,7 @@ The included `setup_windows.bat` and `run_windows.bat` offer a command prompt wo
 
 ## Show the flow without an API key
 
-Run `demo_offline.bat`, enter `Cake`, and choose `1`. The demo exercises the actual search, selection, and recipe-fetch code using clearly labelled sample responses. It makes no RecipeDB request. Use `run_windows.bat` with a real key to show live data.
+Run `demo_offline.bat`, enter `Cake`, and choose `50`. The demo shows 50 sample matches across five simulated API pages, then fetches the selected sample recipe through the actual app and client code. It makes no RecipeDB request. Use `run_windows.bat` with a real key to show live data.
 
 ## Offline checks
 

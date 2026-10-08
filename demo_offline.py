@@ -13,12 +13,14 @@ import app  # noqa: E402 - the demo key must be set before app is imported
 
 SAMPLE_RECIPES = [
     {
-        "Recipe_id": "demo-101",
-        "Recipe_title": "Chocolate Cake (sample)",
+        "Recipe_id": f"demo-{number:03}",
+        "Recipe_title": f"Chocolate Cake Sample {number:02}",
         "ingredients": ["flour", "sugar", "cocoa powder"],
-    },
+    }
+    for number in range(1, 51)
+] + [
     {
-        "Recipe_id": "demo-102",
+        "Recipe_id": "demo-101",
         "Recipe_title": "Lemonade (sample)",
         "ingredients": ["lemon juice", "water", "sugar"],
     },
@@ -44,7 +46,18 @@ def sample_get(url, *, params=None, **_kwargs):
             for recipe in SAMPLE_RECIPES
             if query in recipe["Recipe_title"].casefold()
         ]
-        return DemoResponse({"data": matches})
+        page_size = 10
+        page = int((params or {}).get("page", 1))
+        start = (page - 1) * page_size
+        return DemoResponse(
+            {
+                "data": matches[start : start + page_size],
+                "pagination": {
+                    "totalPages": (len(matches) + page_size - 1) // page_size,
+                    "itemsPerPage": page_size,
+                },
+            }
+        )
 
     for recipe in SAMPLE_RECIPES:
         if url.endswith(f"/search-recipe/{recipe['Recipe_id']}"):
@@ -55,6 +68,7 @@ def sample_get(url, *, params=None, **_kwargs):
 
 if __name__ == "__main__":
     print("OFFLINE DEMO - SAMPLE DATA ONLY; NO RECIPEDB REQUEST IS MADE")
-    print("Try Cake or Lemonade, then select recipe 1.\n")
+    print("Type Cake to see 50 sample matches, then select 50.")
+    print("You can also type Lemonade to see one sample match.\n")
     with patch("recipedb_client.requests.get", side_effect=sample_get):
         app.main()
