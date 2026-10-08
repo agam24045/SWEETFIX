@@ -5,7 +5,7 @@ SweetFix is a BTech project exploring sweetener recommendations. The implemented
 ## Current flow
 
 1. Enter a recipe name.
-2. Search RecipeDB by title, collect up to 50 matches across result pages, and choose one.
+2. Search RecipeDB by title with its paginated advanced-search endpoint, collect up to 50 matches in pages of 10, and choose one.
 3. Fetch the selected recipe by `Recipe_id`.
 4. Print the complete raw JSON response.
 

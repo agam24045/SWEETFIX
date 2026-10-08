@@ -28,7 +28,8 @@ class RecipeFetcherTests(unittest.TestCase):
     def test_search_selection_and_raw_recipe_output(self):
         search = Mock()
         search.json.return_value = {
-            "data": [{"Recipe_id": "123", "Recipe_title": "Cake"}]
+            "data": [{"Recipe_id": "123", "Recipe_title": "Cake"}],
+            "meta": {"totalPages": 1},
         }
         detail = Mock()
         detail.json.return_value = {"Recipe_id": "123", "ingredients": ["flour"]}
@@ -40,7 +41,12 @@ class RecipeFetcherTests(unittest.TestCase):
         self.assertEqual(get.call_count, 2)
         self.assertEqual(
             get.call_args_list[0].kwargs["params"],
-            {"title": "Cake", "page": 1, "limit": 50},
+            {"title": "Cake", "page": 1, "limit": 10},
+        )
+        self.assertTrue(
+            get.call_args_list[0].args[0].endswith(
+                "/recipebyingredient/by-ingredients-categories-title"
+            )
         )
         self.assertTrue(get.call_args_list[1].args[0].endswith("/search-recipe/123"))
         self.assertIn('"flour"', output.getvalue())
@@ -63,7 +69,7 @@ class RecipeFetcherTests(unittest.TestCase):
                     {"Recipe_id": str(number), "Recipe_title": f"Cake {number}"}
                     for number in range(start, start + 10)
                 ],
-                "pagination": {"totalPages": 6},
+                "meta": {"totalPages": 6},
             }
             for start in range(1, 61, 10)
         ]
@@ -76,11 +82,12 @@ class RecipeFetcherTests(unittest.TestCase):
         self.assertEqual(results["data"][-1]["Recipe_id"], "50")
         self.assertEqual(get.call_count, 5)
         self.assertEqual(get.call_args_list[-1].kwargs["params"]["page"], 5)
+        self.assertEqual(get.call_args_list[-1].kwargs["params"]["limit"], 10)
 
     def test_search_stops_if_api_repeats_a_page(self):
         page = {
             "data": [{"Recipe_id": "123", "Recipe_title": "Cake"}],
-            "pagination": {"totalPages": 100},
+            "meta": {"totalPages": 100},
         }
         with patch.dict(os.environ, {"RECIPEDB_API_KEY": "offline-test-key"}), patch.object(
             RecipeDBClient, "_get", return_value=page

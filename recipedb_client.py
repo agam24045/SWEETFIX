@@ -55,27 +55,33 @@ class RecipeDBClient:
 
     def search_by_title(self, title, max_results=50):
         """Search by title and collect up to max_results across API pages."""
-        path = "/recipe2-api/recipe-bytitle/recipeByTitle"
+        # The dedicated title endpoint documents only `title` and returns ten
+        # results. RecipeDB's advanced search supports title, page, and limit.
+        path = "/recipe2-api/recipebyingredient/by-ingredients-categories-title"
         recipes = []
         seen_ids = set()
         first_response = None
         page = 1
+        page_size = min(10, max_results)
 
         while len(recipes) < max_results:
-            # The supplied RecipeDB example returns ten items per page. Asking
-            # for 50 may work directly; otherwise follow its pagination data.
+            # RecipeDB rejects limits above ten, so request successive pages.
             response = self._get(
                 path,
-                params={"title": title, "page": page, "limit": max_results},
+                params={"title": title, "page": page, "limit": page_size},
             )
-            if not isinstance(response, dict) or not isinstance(response.get("data"), list):
+            if not isinstance(response, dict):
+                raise RecipeDBError("RecipeDB returned an unexpected search response.")
+            payload = response.get("payload")
+            result = payload if isinstance(payload, dict) else response
+            if not isinstance(result.get("data"), list):
                 raise RecipeDBError("RecipeDB returned an unexpected search response.")
 
             if first_response is None:
                 first_response = response
 
             added = 0
-            for recipe in response["data"]:
+            for recipe in result["data"]:
                 recipe_id = recipe.get("Recipe_id")
                 if recipe_id in seen_ids:
                     continue
@@ -85,10 +91,10 @@ class RecipeDBClient:
                 if len(recipes) == max_results:
                     break
 
-            pagination = response.get("pagination") or {}
+            pagination = result.get("pagination") or response.get("meta") or {}
             total_pages = pagination.get("totalPages")
             if (
-                not response["data"]
+                not result["data"]
                 or added == 0
                 or not pagination
                 or (isinstance(total_pages, int) and page >= total_pages)

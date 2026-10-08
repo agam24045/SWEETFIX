@@ -39,7 +39,7 @@ class DemoResponse:
 
 
 def sample_get(url, *, params=None, **_kwargs):
-    if url.endswith("/recipe-bytitle/recipeByTitle"):
+    if url.endswith("/recipebyingredient/by-ingredients-categories-title"):
         query = (params or {}).get("title", "").casefold()
         matches = [
             {"Recipe_id": recipe["Recipe_id"], "Recipe_title": recipe["Recipe_title"]}
@@ -52,9 +52,9 @@ def sample_get(url, *, params=None, **_kwargs):
         return DemoResponse(
             {
                 "data": matches[start : start + page_size],
-                "pagination": {
+                "meta": {
                     "totalPages": (len(matches) + page_size - 1) // page_size,
-                    "itemsPerPage": page_size,
+                    "limit": page_size,
                 },
             }
         )
