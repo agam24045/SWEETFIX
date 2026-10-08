@@ -23,7 +23,7 @@ if not exist .env (
 echo.
 echo Setup complete.
 echo After adding your API key to .env, run:
-echo python app.py
+echo run_windows.bat
 pause
 exit /b 0
 
