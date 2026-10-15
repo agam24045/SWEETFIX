@@ -1,5 +1,8 @@
 import json
+import textwrap
+
 from recipedb_client import RecipeDBClient, RecipeDBError
+from recipe_analysis import extract_recipe, find_sweetening_ingredients
 
 
 def main():
@@ -50,8 +53,39 @@ def main():
         print(f"\nFetching {selected.get('Recipe_title', 'recipe')}...")
 
         full_recipe = client.get_recipe_by_id(recipe_id)
-        print("\nRecipeDB details:\n")
-        print(json.dumps(full_recipe.get("data", full_recipe), indent=2, ensure_ascii=False))
+        recipe = extract_recipe(full_recipe)
+
+        print(f"\n{recipe['title']} (ID: {recipe['id'] or recipe_id})")
+        print("\nIngredients:")
+        if recipe["ingredients"]:
+            for ingredient in recipe["ingredients"]:
+                print(f"- {ingredient['text']}")
+        else:
+            print("No ingredient list was returned.")
+
+        print("\nPossible sweetening ingredients:")
+        matches = find_sweetening_ingredients(recipe["ingredients"])
+        if matches:
+            for match in matches:
+                print(f"- {match['text']} (matched: {match['term']})")
+        elif not recipe["ingredients"]:
+            print("Cannot check because RecipeDB returned no ingredient list.")
+        else:
+            print("No listed ingredient matched the current term list.")
+
+        print("\nInstructions:")
+        if recipe["instructions"]:
+            for number, step in enumerate(recipe["instructions"], start=1):
+                print(textwrap.fill(step, width=88, initial_indent=f"{number}. ", subsequent_indent="   "))
+        else:
+            print("No instructions were returned.")
+
+        try:
+            show_full = input("\nShow the full RecipeDB response? (y/N): ").strip().lower()
+        except EOFError:
+            show_full = ""
+        if show_full in {"y", "yes"}:
+            print(json.dumps(full_recipe, indent=2, ensure_ascii=False))
 
     except RecipeDBError as error:
         print("\nRecipeDB error:")
