@@ -4,7 +4,7 @@ import textwrap
 from recipedb_client import RecipeDBClient, RecipeDBError
 from recipe_analysis import extract_recipe, find_sweetening_ingredients
 from recipe_classifier import classify_recipe
-from sweetener_filter import screen_sweeteners
+from sweetener_filter import load_sweeteners, screen_sweeteners
 
 
 def show_screen(results):
@@ -20,7 +20,9 @@ def show_screen(results):
     for item in excluded:
         print(f"- {item['id']} | {item['name']}: {item['reason']}")
         if item["id"] != "SW001":
-            print(f"  Database heat entry: {item['heat_stability']}")
+            print(f"  Workbook heat entry: {item['heat_stability']}")
+            if item["research_level"] != "no_new_match":
+                print(f"  New research: {item['research_note']}")
 
     if candidates:
         print(f"\nProvisional heat candidates ({len(candidates)}):")
@@ -39,6 +41,29 @@ def show_screen(results):
         print(textwrap.fill(ids, width=88, initial_indent="  ", subsequent_indent="  "))
 
     print("Other checks, including permitted use, dose, taste, and recipe function, are still needed.")
+
+
+def inspect_heat_evidence(sweeteners):
+    by_id = {item["id"].upper(): item for item in sweeteners}
+    while True:
+        try:
+            sweetener_id = input("\nInspect heat evidence for an ID (Enter to finish): ").strip().upper()
+        except EOFError:
+            return
+        if not sweetener_id:
+            return
+        item = by_id.get(sweetener_id)
+        if item is None:
+            print("ID not found. Use an ID shown in the screen above.")
+            continue
+
+        print(f"\n{item['id']} | {item['name']}")
+        print(f"Workbook heat note: {item['heat_stability']}")
+        print(f"Workbook source ID: {item['heat_source_id'] or 'not listed'}")
+        print(f"Research type: {item['research_level']}")
+        print(textwrap.fill(item["research_note"], width=88))
+        for source in item["research_sources"]:
+            print(f"Source: {source}")
 
 
 def main():
@@ -134,7 +159,9 @@ def main():
             print("Unrecognized choice; using the estimate above.")
         heat = choices.get(answer, classification["heat"])
         print(f"Screening for: {heat}")
-        show_screen(screen_sweeteners(heat))
+        sweeteners = load_sweeteners()
+        show_screen(screen_sweeteners(heat, sweeteners))
+        inspect_heat_evidence(sweeteners)
 
         try:
             show_full = input("\nShow the full RecipeDB response? (y/N): ").strip().lower()

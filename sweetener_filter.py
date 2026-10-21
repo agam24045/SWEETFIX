@@ -3,11 +3,26 @@ from pathlib import Path
 
 
 DATABASE = Path(__file__).parent / "data" / "sweeteners.json"
+HEAT_FINDINGS = Path(__file__).parent / "data" / "heat_findings.json"
 
 
 def load_sweeteners():
     with DATABASE.open(encoding="utf-8") as file:
-        return json.load(file)
+        sweeteners = json.load(file)
+    with HEAT_FINDINGS.open(encoding="utf-8") as file:
+        findings = json.load(file)
+
+    for item in sweeteners:
+        research = findings.get(item["id"], {})
+        item["research_level"] = research.get("level", "no_new_match")
+        item["research_note"] = research.get(
+            "finding",
+            "No additional substance-specific time-temperature evidence was located in this research pass.",
+        )
+        item["research_sources"] = research.get("sources", [])
+        item["review_when_heated"] = research.get("review_when_heated", False)
+        item["exclude_when_baked"] = research.get("exclude_when_baked", False)
+    return sweeteners
 
 
 def screen_sweeteners(heat, sweeteners=None):
@@ -37,6 +52,12 @@ def screen_sweeteners(heat, sweeteners=None):
         ):
             group = "excluded"
             reason = "Database reports loss of sweetness during prolonged heating."
+        elif heat == "baking" and entry.get("exclude_when_baked"):
+            group = "excluded"
+            reason = "Published heating evidence shows loss of sweetness during baking-level heat."
+        elif entry.get("review_when_heated"):
+            group = "review"
+            reason = "New heat-loss measurements need a matched process before this can pass."
         elif "heat stable; suitable for baking and hot processing" in heat_note:
             group = "candidate"
             reason = "Database describes this sweetener as stable for baking and hot processing."

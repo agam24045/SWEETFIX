@@ -21,13 +21,15 @@ The ingredient check uses a short list of common terms. A recipe with no matches
 
 `recipe_classifier.py` uses the title and instruction words to estimate a food category and heating process. The program asks you to confirm how **the replacement sweetener itself** will be used. For example, choose `n` for frosting added after a cake is baked. This choice is important because oven temperature is not the same as the temperature of every ingredient.
 
-`data/SweetFix_Database_Final.xlsx` is the research workbook. `data/sweeteners.json` contains the 72 workbook records needed by the live app: ID, name, entity type, heat note, heat source ID, and regulatory note. The JSON lets the existing Windows setup run without a spreadsheet library. The original workbook remains available for checking the source data.
+`data/SweetFix_Database_Final.xlsx` is the original research workbook. `data/sweeteners.json` contains its 72 records needed by the live app. `data/heat_findings.json` adds the online heat research, with tested conditions and source links keyed by sweetener ID. The program combines both files when it runs. The original workbook remains unchanged so its earlier entries can be compared with the new findings; the app needs no spreadsheet library.
 
 `sweetener_filter.py` gives each database ID one of four outcomes:
 
-- **Excluded:** `SW001` is the sucrose reference. For baking, an entry is also excluded when its heat note explicitly says it is not heat stable and loses sweetness during prolonged heating; currently that is `SW020` (aspartame).
-- **Provisional heat candidate:** the heat note explicitly says the substance is heat stable and suitable for baking and hot processing; currently `SW019`, `SW023`, and `SW024`. This is only a temperature screen.
+- **Excluded:** `SW001` is the sucrose reference. For baking, `SW020` (aspartame) is excluded by its workbook heat note and `SW058` (native monellin) by the newly linked heating study.
+- **Provisional heat candidate:** the heat note explicitly says the substance is heat stable and suitable for baking and hot processing; currently `SW019` and `SW024`. This is only a temperature screen. New milk processing data hold `SW023` (neotame) for review rather than passing it automatically.
 - **Needs review:** the available data do not match the recipe's actual time, temperature, acidity, and food matrix. The app prints every held ID.
 - **No heat exclusion applied:** for a no-heat use, heat stability does not eliminate an alternative. Other checks are still required.
 
-The database has many `NR`, inferred, retained, and matrix-specific heat entries. The program does not turn these into hard temperature limits. The categories are estimates, so check the recipe instructions and choose the correct heat exposure. No result is a finished blend, dose, taste assessment, medical claim, or confirmation that a sweetener is permitted for your location and food category.
+The online research pass on 22 October 2026 found new direct or contextual evidence for 40 of the 72 IDs. For the remaining IDs, the program reports that this pass found no additional matched study; it keeps their previous workbook note. Type any ID at the new inspection prompt to see its original note, new finding, evidence type, and source links. Some findings concern commercial extracts, fruit pulp, or storage rather than a purified sweetener in a baked recipe. Melting temperature and dry-powder decomposition are not interchangeable with sweetness retention in food.
+
+The database has `NR`, inferred, retained, and matrix-specific heat entries. The program does not turn these into hard temperature limits. The categories are estimates, so check the recipe instructions and choose the correct heat exposure. No result is a finished blend, dose, taste assessment, medical claim, or confirmation that a sweetener is permitted for your location and food category.

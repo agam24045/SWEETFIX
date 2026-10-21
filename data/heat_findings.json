@@ -1,0 +1,204 @@
+{
+  "SW002": {
+    "level": "matrix",
+    "finding": "A 70.4% allulose syrup was followed for 16 weeks at 4-60 C. At 40 C and above, allulose declined and browning products accumulated. This is long-term syrup storage, not a baking limit.",
+    "sources": ["https://www.sciencedirect.com/science/article/pii/S0308814626009064"]
+  },
+  "SW003": {
+    "level": "direct",
+    "finding": "Tagatose solutions were tested at 60, 70 and 80 C. Loss was small at pH 3 but faster at pH 7, especially in phosphate buffer. The authors predicted very small loss during standard beverage pasteurization; this does not establish a baking limit.",
+    "sources": ["https://pubmed.ncbi.nlm.nih.gov/20546393/"]
+  },
+  "SW011": {
+    "level": "dossier",
+    "finding": "A manufacturer dossier reports 4% trehalose solution resisting hydrolysis at 100 C across pH 2-10. This is submitted product evidence, not an independently replicated baking limit.",
+    "sources": ["https://acnfp.food.gov.uk/sites/default/files/mnt/drupal_data/sources/files/multimedia/pdfs/0_1.pdf"]
+  },
+  "SW013": {
+    "level": "direct",
+    "finding": "A model-solution experiment measured heat-driven HMF formation from fructose at 80, 100 and 120 C. Product formation depends on time and solution conditions; no universal sweetening limit follows.",
+    "sources": ["https://www.spkx.net.cn/EN/10.7506/spkx1002-6630-201417009"]
+  },
+  "SW014": {
+    "level": "direct",
+    "finding": "A model-solution experiment measured heat-driven HMF formation from glucose at 80, 100 and 120 C. Product formation depends on time and solution conditions; no universal sweetening limit follows.",
+    "sources": ["https://www.spkx.net.cn/EN/10.7506/spkx1002-6630-201417009"]
+  },
+  "SW015": {
+    "level": "matrix",
+    "finding": "Maltose in a casein model system was studied at 120 C and pH 6.8. Isomerization, degradation and Maillard reactions occurred; results are specific to this protein-containing matrix.",
+    "sources": ["https://www.sciencedirect.com/science/article/pii/S0308814603000311"]
+  },
+  "SW016": {
+    "level": "matrix",
+    "finding": "Lactose in a casein model system was studied at 120 C and pH 6.8. Isomerization, degradation and Maillard reactions occurred; results are specific to this protein-containing matrix.",
+    "sources": ["https://www.sciencedirect.com/science/article/pii/S0308814603000311"]
+  },
+  "SW017": {
+    "level": "direct",
+    "finding": "A model-solution experiment measured heat-driven HMF formation from galactose at 80, 100 and 120 C. Product formation depends on time and solution conditions; no universal sweetening limit follows.",
+    "sources": ["https://www.spkx.net.cn/EN/10.7506/spkx1002-6630-201417009"]
+  },
+  "SW020": {
+    "level": "direct",
+    "finding": "In flavored milk, pasteurization at 90 C for 20 min caused about 40% aspartame loss; sterilization at 121 C for 15 min caused complete degradation. Loss varies with pH and matrix.",
+    "sources": ["https://pubmed.ncbi.nlm.nih.gov/26593524/"]
+  },
+  "SW021": {
+    "level": "regulatory_review",
+    "finding": "FDA describes sucralose as baking-stable, while EFSA's 2026 review could not conclude on a proposed fine-bakery extension because of uncertainty about products formed under prolonged high heat. A dry-material decomposition result is not a food-matrix threshold. Keep baking use under review.",
+    "sources": ["https://www.fda.gov/food/food-additives-petitions/aspartame-and-other-sweeteners-food", "https://www.efsa.europa.eu/sites/default/files/2026-02/ON-9854.PDF"]
+  },
+  "SW022": {
+    "level": "qualitative",
+    "finding": "FDA lists saccharin for cooking or table use, but this does not provide a matched time-temperature retention test or a universal baking threshold.",
+    "sources": ["https://www.fda.gov/food/food-additives-petitions/aspartame-and-other-sweeteners-food"]
+  },
+  "SW023": {
+    "level": "direct",
+    "review_when_heated": true,
+    "finding": "In flavored milk, pasteurization at 90 C for 20 min degraded about 8% of neotame; after 121 C for 15 min about 50.5% remained. FDA nevertheless describes neotame as suitable for baking; process duration and matrix still matter.",
+    "sources": ["https://pubmed.ncbi.nlm.nih.gov/26593524/", "https://www.fda.gov/food/food-additives-petitions/aspartame-and-other-sweeteners-food"]
+  },
+  "SW025": {
+    "level": "qualitative",
+    "finding": "A Food Standards Australia New Zealand assessment describes cyclamate as stable in cooking and baking, without a numeric time-temperature profile. Permitted use must be checked separately for the relevant country.",
+    "sources": ["https://www.foodstandards.govt.nz/sites/default/files/food-standards-code/proposals/Documents/P287_FAR_Cyclamate_Review_FINAL.pdf"]
+  },
+  "SW027": {
+    "level": "direct",
+    "finding": "In soft drinks held at 80 C for 24-72 h, stevioside and Reb A degraded by up to 70%; stevioside was less stable. A separate aqueous test found 92.01% stevioside remaining after 120 C for 2 h. Matrix and duration strongly matter.",
+    "sources": ["https://pubmed.ncbi.nlm.nih.gov/21067231/", "https://pmc.ncbi.nlm.nih.gov/articles/PMC13464401/"]
+  },
+  "SW028": {
+    "level": "direct",
+    "finding": "In soft drinks held at 80 C for 24-72 h, stevioside and Reb A degraded by up to 70%; Reb A was more stable than stevioside. This does not establish a universal baking limit.",
+    "sources": ["https://pubmed.ncbi.nlm.nih.gov/21067231/"]
+  },
+  "SW029": {
+    "level": "matrix",
+    "finding": "Reb B was detected through commercial stevia extraction and purification without significant overall glycoside modification; no isolated Reb B baking time-temperature test was established.",
+    "sources": ["https://academic.oup.com/ijfst/article/52/10/2156/7775829"]
+  },
+  "SW030": {
+    "level": "matrix",
+    "finding": "Reb C was detected through commercial stevia extraction and purification without significant overall glycoside modification; no isolated Reb C baking time-temperature test was established.",
+    "sources": ["https://academic.oup.com/ijfst/article/52/10/2156/7775829"]
+  },
+  "SW031": {
+    "level": "matrix",
+    "finding": "Reb D was identified in commercial stevia end product after processing, but the study does not give an isolated Reb D food-heating limit.",
+    "sources": ["https://academic.oup.com/ijfst/article/52/10/2156/7775829"]
+  },
+  "SW033": {
+    "level": "matrix",
+    "finding": "Reb F was detected through commercial stevia extraction and purification without significant overall glycoside modification; no isolated Reb F baking time-temperature test was established.",
+    "sources": ["https://academic.oup.com/ijfst/article/52/10/2156/7775829"]
+  },
+  "SW034": {
+    "level": "direct",
+    "finding": "An aqueous test found 94.07% Reb M remaining after 120 C for 2 h. This tested formulation and duration do not define a universal baking maximum.",
+    "sources": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC13464401/"]
+  },
+  "SW038": {
+    "level": "matrix",
+    "finding": "Dulcoside A was detected through commercial stevia extraction and purification without significant overall glycoside modification; no isolated cooking limit was established.",
+    "sources": ["https://academic.oup.com/ijfst/article/52/10/2156/7775829"]
+  },
+  "SW039": {
+    "level": "matrix",
+    "finding": "Rubusoside was detected through commercial stevia extraction and purification without significant overall glycoside modification; no isolated cooking limit was established.",
+    "sources": ["https://academic.oup.com/ijfst/article/52/10/2156/7775829"]
+  },
+  "SW040": {
+    "level": "matrix",
+    "finding": "Steviolbioside was detected through commercial stevia extraction and purification without significant overall glycoside modification; no isolated cooking limit was established.",
+    "sources": ["https://academic.oup.com/ijfst/article/52/10/2156/7775829"]
+  },
+  "SW041": {
+    "level": "matrix",
+    "finding": "In monk-fruit extract, mogroside V retention was 99.9% at 90 C for 2 h and 95.1% at 120 C for 2 h. Extract composition matters; this is not a pure-compound or universal baking limit.",
+    "sources": ["https://www.foodstandards.gov.au/sites/default/files/food-standards-code/applications/Documents/A1129%20SD1%20at%20approval.pdf"]
+  },
+  "SW042": {
+    "level": "matrix",
+    "finding": "Mogroside IV content changed when whole monk fruit was dried at 40-80 C. Biosynthesis and interconversion may contribute; no isolated mogroside IV heat limit was established.",
+    "sources": ["https://www.mdpi.com/2304-8158/15/2/335"]
+  },
+  "SW043": {
+    "level": "matrix",
+    "finding": "Mogroside III content changed when whole monk fruit was dried at 40-80 C. This cannot be translated into an isolated-compound cooking limit.",
+    "sources": ["https://www.mdpi.com/2304-8158/15/2/335"]
+  },
+  "SW044": {
+    "level": "matrix",
+    "finding": "Mogroside IIe content changed when whole monk fruit was dried at 40-80 C. This cannot be translated into an isolated-compound cooking limit.",
+    "sources": ["https://www.mdpi.com/2304-8158/15/2/335"]
+  },
+  "SW045": {
+    "level": "direct",
+    "finding": "Siamenoside I in acidic mock beverages at pH 2.8-4.2 and 5-40 C over 26 weeks lost about 2% at the harshest tested condition (pH 2.8, 40 C). This is storage evidence, not baking evidence.",
+    "sources": ["https://ijpsr.com/?action=download_pdf&postid=115875"]
+  },
+  "SW046": {
+    "level": "matrix",
+    "finding": "11-Oxo-mogroside V content changed when whole monk fruit was dried at 40-80 C. This cannot be translated into an isolated-compound cooking limit.",
+    "sources": ["https://www.mdpi.com/2304-8158/15/2/335"]
+  },
+  "SW047": {
+    "level": "direct",
+    "finding": "A stability-indicating HPLC study stressed glycyrrhizin at 80 C for 24 h and reported comparatively greater stability under the tested thermal condition. It did not establish sweetness retention in food.",
+    "sources": ["https://academic.oup.com/chromsci/article/63/1/bmae022/7665144"]
+  },
+  "SW048": {
+    "level": "direct",
+    "finding": "Neohesperidin dihydrochalcone in diluted aqueous solutions was tested at 50, 70 and 90 C. Degradation followed pH-dependent first-order kinetics, with best stability near pH 4.5; no universal baking limit follows.",
+    "sources": ["https://analusis.edpsciences.org/articles/analusis/pdf/1998/03/s080398.pdf"]
+  },
+  "SW057": {
+    "level": "direct",
+    "finding": "Thaumatin loses sweetness by aggregation when heated near neutral/basic pH; acidic conditions slow the loss. A primary study reports loss above about 70 C near neutral pH, so food pH is essential.",
+    "sources": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC10399911/"]
+  },
+  "SW058": {
+    "level": "direct",
+    "exclude_when_baked": true,
+    "finding": "Native two-chain monellin loses sweetness as temperature rises in aqueous heating experiments; heat-related chain dissociation makes it unsuitable for an unqualified baking pass. Engineered single-chain variants are different substances.",
+    "sources": ["https://journals.sagepub.com/doi/pdf/10.3181/00379727-179-42066"]
+  },
+  "SW059": {
+    "level": "direct",
+    "finding": "Original brazzein study found sweetness was not destroyed by 80 C for 4 h. A newer study examined structural inactivation at 80-100 C for 2 h; this does not give a universal oven limit.",
+    "sources": ["https://www.sciencedirect.com/science/article/pii/0014579394011842", "https://pubmed.ncbi.nlm.nih.gov/38526016/"]
+  },
+  "SW060": {
+    "level": "direct",
+    "finding": "A protein-engineering study measured the low thermal stability of wild-type neoculin and raised its melting temperature with mutations. A melting temperature is not a food-processing or sweetness-retention limit.",
+    "sources": ["https://pubs.acs.org/doi/abs/10.1021/acs.jafc.5c00086"]
+  },
+  "SW061": {
+    "level": "direct",
+    "finding": "Curculin taste-modifying activity was unchanged after 50 C for 1 h over pH 3-11 in the tested solution. Higher-temperature baking performance was not shown.",
+    "sources": ["https://pubmed.ncbi.nlm.nih.gov/7583017/"]
+  },
+  "SW064": {
+    "level": "direct",
+    "finding": "An early experiment found both thaumatin I and II eventually lose sweetness on heating due to irreversible conformational change. An acidic-matrix report describes thaumatin II retaining sweetness at 80 C for 4 h at pH 2; neither gives a general baking limit.",
+    "sources": ["https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1432-1033.1973.tb02872.x", "https://www.sciencedirect.com/science/article/pii/S1046592816300377"]
+  },
+  "SW065": {
+    "level": "matrix",
+    "finding": "Fresh miracle-fruit pulp heated for 5 min kept function at 40-45 C, lost some at 50 C, and lost taste-modifying function at 60-70 C. The result concerns pulp rather than purified miraculin.",
+    "sources": ["https://www.sciencedirect.com/science/article/pii/S2772502225009503"]
+  },
+  "ING004": {
+    "level": "matrix",
+    "finding": "Tested monk-fruit extract retained mogroside V at 90 C for 2 h (99.9%) and 120 C for 2 h (95.1%). A different extract may behave differently.",
+    "sources": ["https://www.foodstandards.gov.au/sites/default/files/food-standards-code/applications/Documents/A1129%20SD1%20at%20approval.pdf"]
+  },
+  "ING005": {
+    "level": "matrix",
+    "finding": "Tested mogroside-V-containing monk-fruit extract retained mogroside V at 90 C for 2 h (99.9%) and 120 C for 2 h (95.1%). Verify the actual product composition before transferring this result.",
+    "sources": ["https://www.foodstandards.gov.au/sites/default/files/food-standards-code/applications/Documents/A1129%20SD1%20at%20approval.pdf"]
+  }
+}
