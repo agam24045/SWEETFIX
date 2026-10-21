@@ -1,0 +1,578 @@
+[
+  {
+    "id": "SW001",
+    "name": "Sucrose",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "RETAINED — <150 °C (Source table designation)",
+    "heat_source_id": "SRC_TIEF",
+    "regulatory_status": "Conventional food ingredient; not a high-intensity food additive"
+  },
+  {
+    "id": "SW002",
+    "name": "D-Allulose (D-Psicose)",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "Powder: 99.9–100% recovery after 29 months at 25–45°C; not a baking limit",
+    "heat_source_id": "SRC_ALL_FSA",
+    "regulatory_status": "US FDA: GRAS notices evaluated with no questions for specified uses"
+  },
+  {
+    "id": "SW003",
+    "name": "D-Tagatose",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "INFERRED — reducing sugar; degradation and browning depend on heat, time and matrix",
+    "heat_source_id": "METHOD_CHEM",
+    "regulatory_status": "US FDA: GRAS notices evaluated with no questions for specified uses"
+  },
+  {
+    "id": "SW004",
+    "name": "Erythritol",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "RETAINED — >160 °C (Table value)",
+    "heat_source_id": "SRC_TIEF",
+    "regulatory_status": "US FDA: permitted sugar alcohol/sweetener under applicable conditions"
+  },
+  {
+    "id": "SW005",
+    "name": "Xylitol",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "RETAINED — >160 °C (Table value)",
+    "heat_source_id": "SRC_TIEF",
+    "regulatory_status": "US FDA: permitted sugar alcohol/sweetener under applicable conditions"
+  },
+  {
+    "id": "SW006",
+    "name": "Sorbitol",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "RETAINED — >160 °C (Table value)",
+    "heat_source_id": "SRC_TIEF",
+    "regulatory_status": "US FDA: permitted sugar alcohol/sweetener under applicable conditions"
+  },
+  {
+    "id": "SW007",
+    "name": "Mannitol",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "RETAINED — >160 °C (Table value)",
+    "heat_source_id": "SRC_TIEF",
+    "regulatory_status": "US FDA: permitted sugar alcohol/sweetener under applicable conditions"
+  },
+  {
+    "id": "SW008",
+    "name": "Maltitol",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "RETAINED — >160 °C (Table value)",
+    "heat_source_id": "SRC_TIEF",
+    "regulatory_status": "US FDA: permitted sugar alcohol/sweetener under applicable conditions"
+  },
+  {
+    "id": "SW009",
+    "name": "Lactitol",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "RETAINED — >160 °C (Table value)",
+    "heat_source_id": "SRC_TIEF",
+    "regulatory_status": "US FDA: permitted sugar alcohol/sweetener under applicable conditions"
+  },
+  {
+    "id": "SW010",
+    "name": "Isomalt",
+    "entity_type": "MIXTURE",
+    "heat_stability": "RETAINED — >160 °C (Table value)",
+    "heat_source_id": "SRC_TIEF",
+    "regulatory_status": "US FDA: permitted sugar alcohol/sweetener under applicable conditions"
+  },
+  {
+    "id": "SW011",
+    "name": "Trehalose",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Conventional carbohydrate ingredient; jurisdiction-specific food standards apply"
+  },
+  {
+    "id": "SW012",
+    "name": "Isomaltulose",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "20% solution stable >60 min at 100°C and pH 2",
+    "heat_source_id": "SRC_ISO_FSANZ",
+    "regulatory_status": "US FDA: GRAS notices evaluated with no questions for specified uses"
+  },
+  {
+    "id": "SW013",
+    "name": "D-Fructose",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "INFERRED — reducing sugar; degradation and browning depend on heat, time and matrix",
+    "heat_source_id": "METHOD_CHEM",
+    "regulatory_status": "Conventional carbohydrate ingredient; jurisdiction-specific food standards apply"
+  },
+  {
+    "id": "SW014",
+    "name": "D-Glucose",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "INFERRED — reducing sugar; degradation and browning depend on heat, time and matrix",
+    "heat_source_id": "METHOD_CHEM",
+    "regulatory_status": "Conventional carbohydrate ingredient; jurisdiction-specific food standards apply"
+  },
+  {
+    "id": "SW015",
+    "name": "Maltose",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "INFERRED — reducing sugar; degradation and browning depend on heat, time and matrix",
+    "heat_source_id": "METHOD_CHEM",
+    "regulatory_status": "Conventional carbohydrate ingredient; jurisdiction-specific food standards apply"
+  },
+  {
+    "id": "SW016",
+    "name": "Lactose",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "INFERRED — reducing sugar; degradation and browning depend on heat, time and matrix",
+    "heat_source_id": "METHOD_CHEM",
+    "regulatory_status": "Conventional carbohydrate ingredient; allergen/source and labelling rules may apply"
+  },
+  {
+    "id": "SW017",
+    "name": "Galactose",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "INFERRED — reducing sugar; degradation and browning depend on heat, time and matrix",
+    "heat_source_id": "METHOD_CHEM",
+    "regulatory_status": "Conventional carbohydrate ingredient; jurisdiction-specific food standards apply"
+  },
+  {
+    "id": "SW018",
+    "name": "D-Arabitol",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not listed in FDA high-intensity-sweetener summary; jurisdiction-specific review required"
+  },
+  {
+    "id": "SW019",
+    "name": "Acesulfame potassium (Ace-K)",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "RETAINED — Heat stable; suitable for baking and hot processing",
+    "heat_source_id": "SRC_FDA_HIS",
+    "regulatory_status": "US FDA-approved food additive sweetener"
+  },
+  {
+    "id": "SW020",
+    "name": "Aspartame",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "RETAINED — Not heat stable; sweetness is lost during prolonged heating",
+    "heat_source_id": "SRC_FDA_HIS",
+    "regulatory_status": "US FDA-approved food additive sweetener; phenylalanine warning required"
+  },
+  {
+    "id": "SW021",
+    "name": "Sucralose",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "Matrix-dependent; dry-material decomposition starts ~119°C; baking suitability needs validation",
+    "heat_source_id": "SRC_SUCR_THERM; SRC_SUCR_EFSA26",
+    "regulatory_status": "US FDA general-purpose sweetener; EU 2026 current uses acceptable; bakery extension unresolved (SRC_SUCR_EFSA26)"
+  },
+  {
+    "id": "SW022",
+    "name": "Saccharin",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA-approved under specified conditions of use"
+  },
+  {
+    "id": "SW023",
+    "name": "Neotame",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "RETAINED — Heat stable; suitable for baking and hot processing",
+    "heat_source_id": "SRC_FDA_HIS",
+    "regulatory_status": "US FDA-approved general-purpose sweetener/flavor enhancer"
+  },
+  {
+    "id": "SW024",
+    "name": "Advantame",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "RETAINED — Heat stable; suitable for baking and hot processing",
+    "heat_source_id": "SRC_FDA_HIS",
+    "regulatory_status": "US FDA-approved general-purpose sweetener/flavor enhancer"
+  },
+  {
+    "id": "SW025",
+    "name": "Cyclamate",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: prohibited; permitted in some other jurisdictions"
+  },
+  {
+    "id": "SW026",
+    "name": "Alitame",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not among FDA-approved high-intensity sweeteners; permitted in some other jurisdictions"
+  },
+  {
+    "id": "SW027",
+    "name": "Stevioside",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "RETAINED — Good stability under mild food-processing conditions; degradation increases with combined heat, time and acidity",
+    "heat_source_id": "SRC_KROYER",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparations may be marketed under applicable GRAS notices; not blanket approval of every isolated analyte"
+  },
+  {
+    "id": "SW028",
+    "name": "Rebaudioside A",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "SPEC — purified Reb A needs a matched time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparations may be marketed under applicable GRAS notices; not blanket approval of every isolated analyte"
+  },
+  {
+    "id": "SW029",
+    "name": "Rebaudioside B",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparations may be marketed under applicable GRAS notices; not blanket approval of every isolated analyte"
+  },
+  {
+    "id": "SW030",
+    "name": "Rebaudioside C",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparations may be marketed under applicable GRAS notices; not blanket approval of every isolated analyte"
+  },
+  {
+    "id": "SW031",
+    "name": "Rebaudioside D",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparations may be marketed under applicable GRAS notices; not blanket approval of every isolated analyte"
+  },
+  {
+    "id": "SW032",
+    "name": "Rebaudioside E",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparations may be marketed under applicable GRAS notices; not blanket approval of every isolated analyte"
+  },
+  {
+    "id": "SW033",
+    "name": "Rebaudioside F",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparations may be marketed under applicable GRAS notices; not blanket approval of every isolated analyte"
+  },
+  {
+    "id": "SW034",
+    "name": "Rebaudioside M",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "Dry powder stable ≥1 year at ambient conditions; HTST beverage stability reported",
+    "heat_source_id": "SRC_REBM",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparations may be marketed under applicable GRAS notices; not blanket approval of every isolated analyte"
+  },
+  {
+    "id": "SW035",
+    "name": "Rebaudioside N",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparations may be marketed under applicable GRAS notices; not blanket approval of every isolated analyte"
+  },
+  {
+    "id": "SW036",
+    "name": "Rebaudioside O",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparations may be marketed under applicable GRAS notices; not blanket approval of every isolated analyte"
+  },
+  {
+    "id": "SW037",
+    "name": "Rebaudioside I",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparations may be marketed under applicable GRAS notices; not blanket approval of every isolated analyte"
+  },
+  {
+    "id": "SW038",
+    "name": "Dulcoside A",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparations may be marketed under applicable GRAS notices; not blanket approval of every isolated analyte"
+  },
+  {
+    "id": "SW039",
+    "name": "Rubusoside",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparations may be marketed under applicable GRAS notices; not blanket approval of every isolated analyte"
+  },
+  {
+    "id": "SW040",
+    "name": "Steviolbioside",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparations may be marketed under applicable GRAS notices; not blanket approval of every isolated analyte"
+  },
+  {
+    "id": "SW041",
+    "name": "Mogroside V",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "RETAINED — Mogroside V reported stable at 100–150°C for 4 h and in boiling water up to 8 h",
+    "heat_source_id": "SRC_MONK_STAB",
+    "regulatory_status": "US FDA: compliant monk-fruit extracts may be covered by GRAS notices; isolated compound requires product-specific review"
+  },
+  {
+    "id": "SW042",
+    "name": "Mogroside IV",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: compliant monk-fruit extracts may be covered by GRAS notices; isolated compound requires product-specific review"
+  },
+  {
+    "id": "SW043",
+    "name": "Mogroside III",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: compliant monk-fruit extracts may be covered by GRAS notices; isolated compound requires product-specific review"
+  },
+  {
+    "id": "SW044",
+    "name": "Mogroside IIe",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: compliant monk-fruit extracts may be covered by GRAS notices; isolated compound requires product-specific review"
+  },
+  {
+    "id": "SW045",
+    "name": "Siamenoside I",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: compliant monk-fruit extracts may be covered by GRAS notices; isolated compound requires product-specific review"
+  },
+  {
+    "id": "SW046",
+    "name": "11-Oxo-mogroside V",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: compliant monk-fruit extracts may be covered by GRAS notices; isolated compound requires product-specific review"
+  },
+  {
+    "id": "SW047",
+    "name": "Glycyrrhizin (Glycyrrhizic acid)",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not listed as a US FDA high-intensity sweetener; use level and health warnings require jurisdiction review"
+  },
+  {
+    "id": "SW048",
+    "name": "Neohesperidin dihydrochalcone (NHDC)",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "EU: authorized as E959; not FDA-approved as a general-purpose sweetener"
+  },
+  {
+    "id": "SW049",
+    "name": "Naringin dihydrochalcone",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not listed in FDA high-intensity-sweetener summary; food-use approval requires jurisdiction- and product-specific review"
+  },
+  {
+    "id": "SW050",
+    "name": "Phyllodulcin",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not listed in FDA high-intensity-sweetener summary; food-use approval requires jurisdiction- and product-specific review"
+  },
+  {
+    "id": "SW051",
+    "name": "Hernandulcin",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not listed in FDA high-intensity-sweetener summary; food-use approval requires jurisdiction- and product-specific review"
+  },
+  {
+    "id": "SW052",
+    "name": "Osladin",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not listed in FDA high-intensity-sweetener summary; food-use approval requires jurisdiction- and product-specific review"
+  },
+  {
+    "id": "SW053",
+    "name": "Polypodoside A",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not listed in FDA high-intensity-sweetener summary; food-use approval requires jurisdiction- and product-specific review"
+  },
+  {
+    "id": "SW054",
+    "name": "Periandrin I",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not listed in FDA high-intensity-sweetener summary; food-use approval requires jurisdiction- and product-specific review"
+  },
+  {
+    "id": "SW055",
+    "name": "Trilobatin",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not listed in FDA high-intensity-sweetener summary; food-use approval requires jurisdiction- and product-specific review"
+  },
+  {
+    "id": "SW056",
+    "name": "Pterocaryoside A",
+    "entity_type": "PURE_COMPOUND",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not listed in FDA high-intensity-sweetener summary; food-use approval requires jurisdiction- and product-specific review"
+  },
+  {
+    "id": "SW057",
+    "name": "Thaumatin",
+    "entity_type": "PROTEIN_PREPARATION",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "US FDA: GRAS notices reviewed with no questions for specified thaumatin uses"
+  },
+  {
+    "id": "SW058",
+    "name": "Monellin",
+    "entity_type": "PROTEIN",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not listed in FDA high-intensity-sweetener summary; food-use approval requires jurisdiction- and product-specific review"
+  },
+  {
+    "id": "SW059",
+    "name": "Brazzein",
+    "entity_type": "PROTEIN",
+    "heat_stability": "Sweetness retained after 4 h at 80°C in original report",
+    "heat_source_id": "SRC_BRAZ",
+    "regulatory_status": "US: specific brazzein preparations have FDA GRAS no-questions letters (e.g. GRN 1167); verify preparation (SRC_BRAZ_GRAS)"
+  },
+  {
+    "id": "SW060",
+    "name": "Neoculin",
+    "entity_type": "PROTEIN",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not listed in FDA high-intensity-sweetener summary; food-use approval requires jurisdiction- and product-specific review"
+  },
+  {
+    "id": "SW061",
+    "name": "Curculin",
+    "entity_type": "PROTEIN",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not listed in FDA high-intensity-sweetener summary; food-use approval requires jurisdiction- and product-specific review"
+  },
+  {
+    "id": "SW062",
+    "name": "Mabinlin II",
+    "entity_type": "PROTEIN",
+    "heat_stability": "Sweetness unchanged after ≥48 h near boiling",
+    "heat_source_id": "SRC_MAB",
+    "regulatory_status": "Not listed in FDA high-intensity-sweetener summary; food-use approval requires jurisdiction- and product-specific review"
+  },
+  {
+    "id": "SW063",
+    "name": "Pentadin",
+    "entity_type": "PROTEIN",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not listed in FDA high-intensity-sweetener summary; food-use approval requires jurisdiction- and product-specific review"
+  },
+  {
+    "id": "SW064",
+    "name": "Thaumatin II",
+    "entity_type": "PROTEIN",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "JECFA group ADI includes thaumatin II; US status depends on the specific preparation/notice"
+  },
+  {
+    "id": "SW065",
+    "name": "Miraculin",
+    "entity_type": "PROTEIN",
+    "heat_stability": "NR — no verified time–temperature stability profile",
+    "heat_source_id": "METHOD_GAPS",
+    "regulatory_status": "Not listed in FDA high-intensity-sweetener summary; food-use approval requires jurisdiction- and product-specific review"
+  },
+  {
+    "id": "ING001",
+    "name": "Stevia extract",
+    "entity_type": "EXTRACT",
+    "heat_stability": "SPEC — exact glycoside profile, carrier and thermal process required",
+    "heat_source_id": "METHOD_BLEND",
+    "regulatory_status": "US FDA: crude/whole-leaf stevia is not permitted as a sweetener; qualifying high-purity extracts may use applicable GRAS notices"
+  },
+  {
+    "id": "ING002",
+    "name": "Reb-A standardized stevia",
+    "entity_type": "STANDARDIZED_EXTRACT",
+    "heat_stability": "SPEC — exact glycoside profile, carrier and thermal process required",
+    "heat_source_id": "METHOD_BLEND",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparation may use applicable GRAS notice; verify identity and purity"
+  },
+  {
+    "id": "ING003",
+    "name": "Reb-M standardized stevia",
+    "entity_type": "STANDARDIZED_EXTRACT",
+    "heat_stability": "PROXY — purified Reb M has reported HTST beverage stability",
+    "heat_source_id": "SRC_REBM",
+    "regulatory_status": "US FDA: qualifying high-purity steviol-glycoside preparation may use applicable GRAS notice; verify identity and purity"
+  },
+  {
+    "id": "ING004",
+    "name": "Monk fruit extract",
+    "entity_type": "EXTRACT",
+    "heat_stability": "PROXY — mogroside V stable in tested ~30% extract at 100–150°C, 4 h",
+    "heat_source_id": "SRC_MONK_STAB",
+    "regulatory_status": "US FDA: monk-fruit extracts may be marketed under applicable GRAS notices; verify extract specification and intended use"
+  },
+  {
+    "id": "ING005",
+    "name": "Mogroside-V standardized monk fruit",
+    "entity_type": "STANDARDIZED_EXTRACT",
+    "heat_stability": "PROXY — mogroside V stable in tested ~30% extract at 100–150°C, 4 h",
+    "heat_source_id": "SRC_MONK_STAB",
+    "regulatory_status": "US FDA: monk-fruit extracts may be marketed under applicable GRAS notices; verify extract specification and intended use"
+  },
+  {
+    "id": "ING006",
+    "name": "Stevia + erythritol blend",
+    "entity_type": "BLEND",
+    "heat_stability": "SPEC — process response follows all components; thermal maximum not universal",
+    "heat_source_id": "METHOD_BLEND",
+    "regulatory_status": "Regulatory status follows each component, purity, carrier and intended food category; verify the marketed formulation"
+  },
+  {
+    "id": "ING007",
+    "name": "Monk fruit + erythritol blend",
+    "entity_type": "BLEND",
+    "heat_stability": "SPEC — process response follows all components; thermal maximum not universal",
+    "heat_source_id": "METHOD_BLEND",
+    "regulatory_status": "Regulatory status follows each component, purity, carrier and intended food category; verify the marketed formulation"
+  }
+]

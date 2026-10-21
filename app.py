@@ -3,6 +3,42 @@ import textwrap
 
 from recipedb_client import RecipeDBClient, RecipeDBError
 from recipe_analysis import extract_recipe, find_sweetening_ingredients
+from recipe_classifier import classify_recipe
+from sweetener_filter import screen_sweeteners
+
+
+def show_screen(results):
+    excluded = results["excluded"]
+    review = results["review"]
+    candidates = results["candidate"]
+    unscreened = results["unscreened"]
+
+    total = sum(len(group) for group in results.values())
+    print(f"\nDatabase temperature screen ({total} records):")
+    print("This is a first filter, not a blend recommendation or use approval.")
+    print(f"\nExcluded ({len(excluded)}):")
+    for item in excluded:
+        print(f"- {item['id']} | {item['name']}: {item['reason']}")
+        if item["id"] != "SW001":
+            print(f"  Database heat entry: {item['heat_stability']}")
+
+    if candidates:
+        print(f"\nProvisional heat candidates ({len(candidates)}):")
+        for item in candidates:
+            print(f"- {item['id']} | {item['name']} (heat source: {item['heat_source_id'] or 'not listed'})")
+
+    if review:
+        print(f"\nNeeds process-specific review ({len(review)}):")
+        ids = ", ".join(item["id"] for item in review)
+        print(textwrap.fill(ids, width=88, initial_indent="  ", subsequent_indent="  "))
+        print("These IDs are held back because the temperature exposure or matching evidence is unclear.")
+
+    if unscreened:
+        print(f"\nNo heat exclusion applied to {len(unscreened)} alternatives:")
+        ids = ", ".join(item["id"] for item in unscreened)
+        print(textwrap.fill(ids, width=88, initial_indent="  ", subsequent_indent="  "))
+
+    print("Other checks, including permitted use, dose, taste, and recipe function, are still needed.")
 
 
 def main():
@@ -79,6 +115,26 @@ def main():
                 print(textwrap.fill(step, width=88, initial_indent=f"{number}. ", subsequent_indent="   "))
         else:
             print("No instructions were returned.")
+
+        classification = classify_recipe(recipe)
+        print(f"\nRecipe category: {classification['category']}")
+        print(f"Estimated sweetener heat exposure: {classification['heat']}")
+        print(f"Why: {classification['evidence']}")
+        print("Check when the sweetener is added. Frosting added after baking, for example, is not baked.")
+        choices = {"b": "baking", "h": "hot", "n": "none", "u": "unknown"}
+        prompt = (
+            "Heat exposure for the replacement "
+            "[b=baked, h=heated, n=no heat, u=unknown; Enter=estimate]: "
+        )
+        try:
+            answer = input(prompt).strip().lower()
+        except EOFError:
+            answer = ""
+        if answer and answer not in choices:
+            print("Unrecognized choice; using the estimate above.")
+        heat = choices.get(answer, classification["heat"])
+        print(f"Screening for: {heat}")
+        show_screen(screen_sweeteners(heat))
 
         try:
             show_full = input("\nShow the full RecipeDB response? (y/N): ").strip().lower()
