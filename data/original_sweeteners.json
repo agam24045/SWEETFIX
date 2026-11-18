@@ -1,0 +1,206 @@
+[
+  {
+    "id": "OS001",
+    "name": "Table or white sugar",
+    "group": "free_sugar",
+    "aliases": [
+      "granulated sugar",
+      "white sugar",
+      "table sugar",
+      "caster sugar",
+      "castor sugar",
+      "superfine sugar",
+      "sugar",
+      "sucrose"
+    ]
+  },
+  {
+    "id": "OS002",
+    "name": "Brown sugar",
+    "group": "free_sugar",
+    "aliases": [
+      "brown sugar",
+      "light brown sugar",
+      "dark brown sugar"
+    ]
+  },
+  {
+    "id": "OS003",
+    "name": "Powdered sugar",
+    "group": "free_sugar",
+    "aliases": [
+      "powdered sugar",
+      "confectioners sugar",
+      "confectioner's sugar",
+      "icing sugar"
+    ]
+  },
+  {
+    "id": "OS004",
+    "name": "Cane or raw sugar",
+    "group": "free_sugar",
+    "aliases": [
+      "cane sugar",
+      "raw sugar",
+      "turbinado sugar",
+      "demerara sugar",
+      "muscovado sugar"
+    ]
+  },
+  {
+    "id": "OS005",
+    "name": "Coconut sugar",
+    "group": "free_sugar",
+    "aliases": [
+      "coconut sugar"
+    ]
+  },
+  {
+    "id": "OS006",
+    "name": "Palm sugar",
+    "group": "free_sugar",
+    "aliases": [
+      "palm sugar",
+      "palm jaggery"
+    ]
+  },
+  {
+    "id": "OS007",
+    "name": "Jaggery",
+    "group": "free_sugar",
+    "aliases": [
+      "jaggery",
+      "gur",
+      "gud"
+    ]
+  },
+  {
+    "id": "OS008",
+    "name": "Honey",
+    "group": "free_sugar",
+    "aliases": [
+      "honey"
+    ]
+  },
+  {
+    "id": "OS009",
+    "name": "Maple syrup",
+    "group": "free_sugar",
+    "aliases": [
+      "maple syrup"
+    ]
+  },
+  {
+    "id": "OS010",
+    "name": "Agave syrup",
+    "group": "free_sugar",
+    "aliases": [
+      "agave nectar",
+      "agave syrup"
+    ]
+  },
+  {
+    "id": "OS011",
+    "name": "Corn syrup",
+    "group": "free_sugar",
+    "aliases": [
+      "high fructose corn syrup",
+      "corn syrup"
+    ]
+  },
+  {
+    "id": "OS012",
+    "name": "Golden syrup",
+    "group": "free_sugar",
+    "aliases": [
+      "golden syrup"
+    ]
+  },
+  {
+    "id": "OS013",
+    "name": "Rice syrup",
+    "group": "free_sugar",
+    "aliases": [
+      "brown rice syrup",
+      "rice syrup"
+    ]
+  },
+  {
+    "id": "OS014",
+    "name": "Barley malt syrup",
+    "group": "free_sugar",
+    "aliases": [
+      "barley malt syrup",
+      "malt syrup"
+    ]
+  },
+  {
+    "id": "OS015",
+    "name": "Molasses",
+    "group": "free_sugar",
+    "aliases": [
+      "blackstrap molasses",
+      "molasses"
+    ]
+  },
+  {
+    "id": "OS016",
+    "name": "Treacle",
+    "group": "free_sugar",
+    "aliases": [
+      "black treacle",
+      "treacle"
+    ]
+  },
+  {
+    "id": "OS017",
+    "name": "Glucose or dextrose",
+    "group": "free_sugar",
+    "aliases": [
+      "dextrose",
+      "glucose"
+    ]
+  },
+  {
+    "id": "OS018",
+    "name": "Fructose",
+    "group": "free_sugar",
+    "aliases": [
+      "crystalline fructose",
+      "fructose"
+    ]
+  },
+  {
+    "id": "OS019",
+    "name": "Maltose",
+    "group": "free_sugar",
+    "aliases": [
+      "maltose"
+    ]
+  },
+  {
+    "id": "OS020",
+    "name": "Invert sugar",
+    "group": "free_sugar",
+    "aliases": [
+      "invert sugar",
+      "inverted sugar"
+    ]
+  },
+  {
+    "id": "OS021",
+    "name": "Glucose syrup",
+    "group": "free_sugar",
+    "aliases": [
+      "glucose syrup"
+    ]
+  },
+  {
+    "id": "OS022",
+    "name": "Beet sugar",
+    "group": "free_sugar",
+    "aliases": [
+      "beet sugar"
+    ]
+  }
+]

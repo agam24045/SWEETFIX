@@ -1,35 +1,49 @@
-# SweetFix live RecipeDB demo
+# SweetFix: recipe, condition, and heat demo
 
-SweetFix searches RecipeDB by recipe title and shows up to 50 live matches. After you choose a recipe, it lists ingredients and instructions, flags possible sweetening ingredients, estimates the recipe category and heating process, and screens the local sweetener database. You can also choose to show the complete RecipeDB response.
+SweetFix searches RecipeDB for up to 50 recipe titles. After you choose a recipe, it shows the ingredients and instructions, finds plain table sugar (sucrose), and labels the recipe **Baked**, **Cooked**, **Beverage**, or **Other**. For a recipe with plain sugar, it asks whether you have any conditions in the supplied disease-rule list. It then checks the recipe instructions automatically to estimate whether a replacement sweetener used where the sugar appears would be heated. When a cooking temperature is stated, it converts Fahrenheit to Celsius and uses the highest stated setting for the heat screen.
 
-## Run on Windows
+## Run it on Windows
 
-1. Run `setup_windows.bat` once if the `venv` folder is missing.
-2. Put your RecipeDB API key in `.env` as `RECIPEDB_API_KEY=...`.
-3. Run `run_windows.bat`.
-4. Enter a recipe name, such as `Cake`, then choose a match. Confirm whether the replacement sweetener will be baked, heated, added without heat, or whether that is unknown. Type `y` at the final prompt if you want to see the full API response.
+1. Open this `SweetFix` project folder.
+2. Check that `.env` contains your `RECIPEDB_API_KEY`. If the `venv` folder is missing, run `setup_windows.bat` once.
+3. Double-click `run_windows.bat`.
+4. Search for a recipe and choose a result containing plain sugar. Answer `n` if none of the listed diagnosed conditions applies. If you answer `y`, enter one or more numbers from the displayed list, separated by commas.
+5. Read the automatic heat result and condition-based removals. You can type `y` at the last prompt to see the full RecipeDB response.
 
-`.env` and `venv` stay on your computer and are ignored by Git.
+The category is a simple label based on the recipe title and instructions. A beverage stays **Beverage** even if a syrup is boiled. A no-bake dessert is **Other** unless its instructions include another cooking step. Heat is inferred separately from the order of sugar, cooking, and cooling steps.
 
-## Ingredient check
+## Condition rules
 
-RecipeDB provides an `ingredient_Phrase` (such as `1 cup sugar`) and an ingredient name for each item. SweetFix shows the phrase and checks the name against common sweetening terms. For example, a cake with sugar and brown sugar shows both original ingredient lines and the terms that matched. The instructions are shown below the ingredient check.
+The 82 rules for 38 conditions were transcribed from `SweetFix_Disease_Rules.pdf` into `data/disease_rules.json`. For this project demo, selecting a condition removes its linked sweetener entries from the possible replacement pool when the PDF action is **BLOCK**, **LIMIT**, **REVIEW**, **CAUTION**, or **SOFT PENALTY**. This is a conservative project rule: those latter four actions are not medical bans in the source document. **NO AUTO BLOCK** does not remove an entry unless another selected condition has a removal rule for it. The app has no dose or personal tolerance calculation. It also flags plain sugar already present in the recipe when a selected condition affects sucrose. The two erythritol blend entries inherit erythritol condition rules.
 
-The ingredient check uses a short list of common terms. A recipe with no matches is not necessarily sugar-free.
+The condition screen checks sweetener entries, not all recipe ingredients or packaged-product ingredients. Its remaining-entry count is the pool left for later recommendation scoring; it is not a list of safe or recommended choices. For a diagnosed condition, use the result with your clinician or dietitian's advice. No condition answer is saved.
 
-## Category and temperature screen
+## Automatic heat check
 
-`recipe_classifier.py` uses the title and instruction words to estimate a food category and heating process. The program asks you to confirm how **the replacement sweetener itself** will be used. For example, choose `n` for frosting added after a cake is baked. This choice is important because oven temperature is not the same as the temperature of every ingredient.
+- **Yes:** sugar is added before or during cooking, or the recipe is baked. The heat screen removes `SW020` aspartame and `SW058` native monellin. A verified maximum stability temperature can remove another entry when exceeded.
+- **No:** the instructions show no heating step, or sugar is added after cooking and cooling. No sweetener is removed because of heat.
+- **Unclear:** the instructions are missing or do not establish when the sugar is heated. The heat screen is applied conservatively, and the output says why.
 
-`data/SweetFix_Database_Final.xlsx` is the original research workbook. `data/sweeteners.json` contains its 72 records needed by the live app. `data/heat_findings.json` adds the online heat research, with tested conditions and source links keyed by sweetener ID. The program combines both files when it runs. The original workbook remains unchanged so its earlier entries can be compared with the new findings; the app needs no spreadsheet library.
+The current database has **no general numerical maximum stability temperature for the replacement sweeteners**. A note such as `>160 °C` means stability extends beyond 160 °C; 160 °C is not a cutoff. A temperature at which a sample was tested is not automatically a cutoff either. For example, the 119 °C dry-powder decomposition result for `SW021` sucralose appears as a **review note** above that setting, not an automatic food-recipe exclusion. The recipe's oven setting is also not the measured temperature inside its sweetener.
 
-`sweetener_filter.py` gives each database ID one of four outcomes:
+The check assumes the replacement sweetener is added where the recipe uses plain sugar. For example, if instructions say to cool a cake completely before adding sugar to cold frosting, the result is **No**. Recipe instructions can be incomplete, so the result is an estimate rather than a measured sweetener temperature.
 
-- **Excluded:** `SW001` is the sucrose reference. For baking, `SW020` (aspartame) is excluded by its workbook heat note and `SW058` (native monellin) by the newly linked heating study.
-- **Provisional heat candidate:** the heat note explicitly says the substance is heat stable and suitable for baking and hot processing; currently `SW019` and `SW024`. This is only a temperature screen. New milk processing data hold `SW023` (neotame) for review rather than passing it automatically.
-- **Needs review:** the available data do not match the recipe's actual time, temperature, acidity, and food matrix. The app prints every held ID.
-- **No heat exclusion applied:** for a no-heat use, heat stability does not eliminate an alternative. Other checks are still required.
+The app only looks for plain sugar, white sugar, granulated sugar, caster sugar, superfine sugar, table sugar, or sucrose. It does not trigger the screen for honey, jaggery, brown sugar, syrups, fruit, or sugar substitutes. It copies any written sugar amount from the ingredient line; it does not calculate a replacement amount.
 
-The online research pass on 22 October 2026 found new direct or contextual evidence for 40 of the 72 IDs. For the remaining IDs, the program reports that this pass found no additional matched study; it keeps their previous workbook note. Type any ID at the new inspection prompt to see its original note, new finding, evidence type, and source links. Some findings concern commercial extracts, fruit pulp, or storage rather than a purified sweetener in a baked recipe. Melting temperature and dry-powder decomposition are not interchangeable with sweetness retention in food.
+This is only a simple heat screen. The sweeteners not removed still need checks for taste, dose, recipe function, and permitted use. `SW001` sucrose is the original sugar reference, not a replacement, and is not shown as a heat exclusion. Heat research notes are stored in `data/heat_findings.json` and `HEAT_RESEARCH.md`.
 
-The database has `NR`, inferred, retained, and matrix-specific heat entries. The program does not turn these into hard temperature limits. The categories are estimates, so check the recipe instructions and choose the correct heat exposure. No result is a finished blend, dose, taste assessment, medical claim, or confirmation that a sweetener is permitted for your location and food category.
+## Offline test
+
+Open PowerShell in the demo folder and run:
+
+```powershell
+venv\Scripts\python.exe -m unittest -v test_sweetfix.py
+```
+
+The tests use a fake RecipeDB response and require no API key. They cover the four categories, all 82 condition-rule records, conservative condition removals, the **NO AUTO BLOCK** exception, automatic heat inference, combined heat and condition exclusions, Celsius/Fahrenheit parsing, and the dry-powder review note.
+
+## Database and research files
+
+The live demo reads `data/sweeteners.json` (65 SW entries plus seven extracts or blends), `data/heat_findings.json`, and `data/disease_rules.json`. The single-sheet 65-sweetener numeric database for submission is `submission/SweetFix_Final_Sweetener_Database.xlsx`. The live demo does not yet read that workbook or use its solubility, cooling, and other numeric properties for ranking.
+
+`submission/SweetFix_Solubility_Audit_65.md` records sources and conditions for every solubility entry. `submission/SweetFix_Natural_Sweeteners.xlsx` is the separate original-sweetener research file. The scripts and source data under `_database_build/` reproduce the submission workbook; generated preview PNG files are excluded from Git.

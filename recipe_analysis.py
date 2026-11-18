@@ -1,26 +1,30 @@
 import re
 
 
-SWEETENING_TERMS = (
-    "brown sugar",
-    "powdered sugar",
-    "confectioners sugar",
-    "icing sugar",
-    "coconut sugar",
-    "maple syrup",
-    "corn syrup",
-    "golden syrup",
-    "agave nectar",
-    "sugar",
-    "honey",
-    "syrup",
-    "jaggery",
-    "molasses",
-    "treacle",
-    "stevia",
-    "dextrose",
-    "fructose",
+NUMBER = r"(?:\d+(?:\.\d+)?(?:\s+\d+/\d+|\s+[¼½¾⅓⅔⅛⅜⅝⅞])?|\d+/\d+|[¼½¾⅓⅔⅛⅜⅝⅞])"
+UNIT = (
+    r"(?:cups?|tablespoons?|tbsp\.?|teaspoons?|tsp\.?|grams?|g|kilograms?|kg|"
+    r"millilit(?:er|re)s?|ml|lit(?:er|re)s?|l|ounces?|oz|pounds?|lbs?)"
 )
+AMOUNT = re.compile(rf"(?<!\w){NUMBER}(?:\s*(?:-|to)\s*{NUMBER})?\s*{UNIT}(?!\w)", re.I)
+PLAIN_SUGAR = re.compile(r"\b(?:sugar|sucrose)\b", re.I)
+OTHER_SUGAR = re.compile(
+    r"\b(?:brown|powdered|confectioners'?|icing|coconut|palm|date|raw|cane|beet|"
+    r"turbinado|demerara|muscovado|invert|corn|vanilla|maple)\s+sugar\b"
+    r"|\b(?:sugar[ -]?free|no[ -]?(?:added[ -]?)?sugar|sugar snap peas?|sugar substitute|"
+    r"sugar syrup|sugar cane|sugar alcohols?)\b",
+    re.I,
+)
+
+
+def listed_amount(text):
+    """Copy an explicit amount from a phrase; never infer grams of sugar."""
+    found = [match.group(0).strip() for match in AMOUNT.finditer(text)]
+    if len(found) == 1:
+        return found[0]
+    if len(found) > 1:
+        return "multiple measures; see original line"
+    return "not stated"
 
 
 def extract_recipe(response):
@@ -74,17 +78,20 @@ def extract_recipe(response):
     }
 
 
-def find_sweetening_ingredients(ingredients):
-    """Return listed ingredients that match a common sweetening term."""
+def find_sugar_ingredients(ingredients):
+    """Find plain table sugar or sucrose, keeping the written ingredient amount."""
     matches = []
     for item in ingredients:
-        name = item["name"].casefold()
-        if "sugar-free" in name or "sugar snap pea" in name:
+        phrase = str(item.get("text") or "")
+        name = str(item.get("name") or "")
+        searchable = (phrase or name).replace("’", "'")
+        if OTHER_SUGAR.search(searchable) or OTHER_SUGAR.search(name):
             continue
-
-        for term in SWEETENING_TERMS:
-            if re.search(rf"\b{re.escape(term)}\b", name):
-                matches.append({"text": item["text"], "term": term})
-                break
+        if PLAIN_SUGAR.search(searchable):
+            matches.append({
+                "text": phrase or name,
+                "name": "Table sugar (sucrose)",
+                "amount": listed_amount(phrase),
+            })
 
     return matches

@@ -39,13 +39,21 @@
     "finding": "A model-solution experiment measured heat-driven HMF formation from galactose at 80, 100 and 120 C. Product formation depends on time and solution conditions; no universal sweetening limit follows.",
     "sources": ["https://www.spkx.net.cn/EN/10.7506/spkx1002-6630-201417009"]
   },
+  "SW019": {
+    "level": "regulatory",
+    "finding": "FDA describes acesulfame potassium as heat stable for baking. This supports a heat screen only; it does not replace sugar's bulk or browning role.",
+    "sources": ["https://www.fda.gov/food/food-additives-petitions/aspartame-and-other-sweeteners-food"]
+  },
   "SW020": {
     "level": "direct",
+    "exclude_when_heated": true,
     "finding": "In flavored milk, pasteurization at 90 C for 20 min caused about 40% aspartame loss; sterilization at 121 C for 15 min caused complete degradation. Loss varies with pH and matrix.",
     "sources": ["https://pubmed.ncbi.nlm.nih.gov/26593524/"]
   },
   "SW021": {
     "level": "regulatory_review",
+    "temperature_review_c": 119,
+    "temperature_review_note": "Dry sucralose started decomposing near 119 C in a laboratory test; this is not a universal food limit.",
     "finding": "FDA describes sucralose as baking-stable, while EFSA's 2026 review could not conclude on a proposed fine-bakery extension because of uncertainty about products formed under prolonged high heat. A dry-material decomposition result is not a food-matrix threshold. Keep baking use under review.",
     "sources": ["https://www.fda.gov/food/food-additives-petitions/aspartame-and-other-sweeteners-food", "https://www.efsa.europa.eu/sites/default/files/2026-02/ON-9854.PDF"]
   },
@@ -56,9 +64,13 @@
   },
   "SW023": {
     "level": "direct",
-    "review_when_heated": true,
     "finding": "In flavored milk, pasteurization at 90 C for 20 min degraded about 8% of neotame; after 121 C for 15 min about 50.5% remained. FDA nevertheless describes neotame as suitable for baking; process duration and matrix still matter.",
     "sources": ["https://pubmed.ncbi.nlm.nih.gov/26593524/", "https://www.fda.gov/food/food-additives-petitions/aspartame-and-other-sweeteners-food"]
+  },
+  "SW024": {
+    "level": "regulatory",
+    "finding": "FDA describes advantame as heat stable for baking. This supports a heat screen only; it does not replace sugar's bulk or browning role.",
+    "sources": ["https://www.fda.gov/food/food-additives-petitions/aspartame-and-other-sweeteners-food"]
   },
   "SW025": {
     "level": "qualitative",
@@ -162,7 +174,7 @@
   },
   "SW058": {
     "level": "direct",
-    "exclude_when_baked": true,
+    "exclude_when_heated": true,
     "finding": "Native two-chain monellin loses sweetness as temperature rises in aqueous heating experiments; heat-related chain dissociation makes it unsuitable for an unqualified baking pass. Engineered single-chain variants are different substances.",
     "sources": ["https://journals.sagepub.com/doi/pdf/10.3181/00379727-179-42066"]
   },

@@ -1,0 +1,701 @@
+{
+  "source_document": "SweetFix_Disease_Rules.pdf",
+  "conditions": [
+    "Hereditary fructose intolerance (HFI)",
+    "Fructose-1,6-bisphosphatase deficiency",
+    "Glycogen storage disease type I (GSD-I)",
+    "Classic galactosemia (GALT deficiency)",
+    "Generalized GALE deficiency",
+    "Intermediate GALE deficiency",
+    "Galactokinase deficiency (GALK1)",
+    "Duarte galactosemia",
+    "Congenital glucose-galactose malabsorption (GGM)",
+    "Congenital sucrase-isomaltase deficiency (CSID/GSID)",
+    "Congenital trehalase deficiency",
+    "Congenital lactase deficiency",
+    "Lactose intolerance / lactase non-persistence",
+    "Secondary lactose intolerance",
+    "Phenylketonuria (PKU / PAH deficiency)",
+    "Non-PKU hyperphenylalaninemia requiring Phe restriction",
+    "BH4-related hyperphenylalaninemia requiring Phe restriction",
+    "Tyrosinemia type I",
+    "Tyrosinemia type II",
+    "Fructose malabsorption",
+    "IBS / low-FODMAP phase",
+    "IBS / polyol sensitivity",
+    "IBS with lactose malabsorption / strict low-FODMAP phase",
+    "IBS / excess-fructose sensitivity",
+    "GI tolerance / diarrhea risk",
+    "Dumping syndrome",
+    "Reactive/postprandial hypoglycemia",
+    "Diabetes mellitus type 1 or type 2",
+    "Glycogen storage disease type VI (Hers disease)",
+    "Hypertension",
+    "Chronic kidney disease / renal impairment",
+    "Cardiovascular disease",
+    "Congestive heart failure",
+    "Hypokalemia",
+    "Primary aldosteronism / hyperaldosteronism",
+    "Apparent mineralocorticoid excess / 11beta-HSD2 deficiency",
+    "Cirrhosis / significant chronic liver disease",
+    "Edema-producing disease"
+  ],
+  "rules": [
+    {
+      "sweetener_id": "SW001",
+      "condition": "Hereditary fructose intolerance (HFI)",
+      "action": "BLOCK",
+      "scope": "Absolute avoidance",
+      "note": "Fructose/sucrose-related exposure is contraindicated",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK333439/"
+    },
+    {
+      "sweetener_id": "SW013",
+      "condition": "Hereditary fructose intolerance (HFI)",
+      "action": "BLOCK",
+      "scope": "Absolute avoidance",
+      "note": "Direct fructose exposure",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK333439/"
+    },
+    {
+      "sweetener_id": "SW006",
+      "condition": "Hereditary fructose intolerance (HFI)",
+      "action": "BLOCK",
+      "scope": "Absolute avoidance",
+      "note": "Sorbitol enters fructose metabolism",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK333439/"
+    },
+    {
+      "sweetener_id": "SW021",
+      "condition": "Hereditary fructose intolerance (HFI)",
+      "action": "BLOCK",
+      "scope": "Absolute avoidance",
+      "note": "Listed in GeneReviews agents/circumstances to avoid",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK333439/"
+    },
+    {
+      "sweetener_id": "SW003",
+      "condition": "Hereditary fructose intolerance (HFI)",
+      "action": "BLOCK",
+      "scope": "Strong avoid",
+      "note": "Metabolically related to fructose pathway",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770908/"
+    },
+    {
+      "sweetener_id": "SW008",
+      "condition": "Hereditary fructose intolerance (HFI)",
+      "action": "BLOCK",
+      "scope": "Strong avoid",
+      "note": "Polyol/excipient literature supports avoidance",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770908/"
+    },
+    {
+      "sweetener_id": "SW009",
+      "condition": "Hereditary fructose intolerance (HFI)",
+      "action": "BLOCK",
+      "scope": "Strong avoid",
+      "note": "Polyol/excipient literature supports avoidance",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770908/"
+    },
+    {
+      "sweetener_id": "SW010",
+      "condition": "Hereditary fructose intolerance (HFI)",
+      "action": "BLOCK",
+      "scope": "Strong avoid",
+      "note": "Polyol/excipient literature supports avoidance",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770908/"
+    },
+    {
+      "sweetener_id": "SW007",
+      "condition": "Hereditary fructose intolerance (HFI)",
+      "action": "REVIEW",
+      "scope": "Specialist review",
+      "note": "Specialist practice is inconsistent",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/42654189/"
+    },
+    {
+      "sweetener_id": "SW005",
+      "condition": "Hereditary fructose intolerance (HFI)",
+      "action": "REVIEW",
+      "scope": "Specialist review",
+      "note": "Specialist practice is inconsistent",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/42654189/"
+    },
+    {
+      "sweetener_id": "SW012",
+      "condition": "Hereditary fructose intolerance (HFI)",
+      "action": "REVIEW",
+      "scope": "Likely avoid / specialist review",
+      "note": "Hydrolyses to glucose + fructose",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/12387299/"
+    },
+    {
+      "sweetener_id": "SW002",
+      "condition": "Hereditary fructose intolerance (HFI)",
+      "action": "REVIEW",
+      "scope": "Evidence insufficient",
+      "note": "Do not automatically label safe in HFI",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK333439/"
+    },
+    {
+      "sweetener_id": "SW013",
+      "condition": "Fructose-1,6-bisphosphatase deficiency",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Fructose restriction is part of management",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK550349/"
+    },
+    {
+      "sweetener_id": "SW001",
+      "condition": "Fructose-1,6-bisphosphatase deficiency",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Sucrose is restricted",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK550349/"
+    },
+    {
+      "sweetener_id": "SW006",
+      "condition": "Fructose-1,6-bisphosphatase deficiency",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Sorbitol is restricted",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK550349/"
+    },
+    {
+      "sweetener_id": "SW001",
+      "condition": "Glycogen storage disease type I (GSD-I)",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Listed among substances to avoid",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK1312/"
+    },
+    {
+      "sweetener_id": "SW013",
+      "condition": "Glycogen storage disease type I (GSD-I)",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Listed among substances to avoid",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK1312/"
+    },
+    {
+      "sweetener_id": "SW017",
+      "condition": "Glycogen storage disease type I (GSD-I)",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Listed among substances to avoid",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK1312/"
+    },
+    {
+      "sweetener_id": "SW006",
+      "condition": "Glycogen storage disease type I (GSD-I)",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Listed among substances to avoid",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK1312/"
+    },
+    {
+      "sweetener_id": "SW016",
+      "condition": "Glycogen storage disease type I (GSD-I)",
+      "action": "LIMIT",
+      "scope": "Total simple-sugar allowance",
+      "note": "This is a total simple-sugar limit, not a lactose-only allowance",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK1312/"
+    },
+    {
+      "sweetener_id": "SW012",
+      "condition": "Glycogen storage disease type I (GSD-I)",
+      "action": "REVIEW",
+      "scope": "Likely restrict",
+      "note": "Produces fructose after digestion",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK1312/"
+    },
+    {
+      "sweetener_id": "SW017",
+      "condition": "Classic galactosemia (GALT deficiency)",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Lifelong galactose restriction",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK1518/"
+    },
+    {
+      "sweetener_id": "SW016",
+      "condition": "Classic galactosemia (GALT deficiency)",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Lactose is a major dietary source of galactose",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK1518/"
+    },
+    {
+      "sweetener_id": "SW017",
+      "condition": "Generalized GALE deficiency",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Galactose restriction is required in generalized disease",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK51671/"
+    },
+    {
+      "sweetener_id": "SW016",
+      "condition": "Generalized GALE deficiency",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Lactose restriction is required in generalized disease",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK51671/"
+    },
+    {
+      "sweetener_id": "SW017",
+      "condition": "Intermediate GALE deficiency",
+      "action": "LIMIT",
+      "scope": "Specialist-directed",
+      "note": "Restriction depends on disease severity",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK51671/"
+    },
+    {
+      "sweetener_id": "SW016",
+      "condition": "Intermediate GALE deficiency",
+      "action": "LIMIT",
+      "scope": "Specialist-directed",
+      "note": "Restriction depends on disease severity",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK51671/"
+    },
+    {
+      "sweetener_id": "SW017",
+      "condition": "Galactokinase deficiency (GALK1)",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Dietary galactose restriction is treatment",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK560683/"
+    },
+    {
+      "sweetener_id": "SW016",
+      "condition": "Galactokinase deficiency (GALK1)",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Lactose supplies galactose",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK560683/"
+    },
+    {
+      "sweetener_id": "SW017",
+      "condition": "Duarte galactosemia",
+      "action": "NO AUTO BLOCK",
+      "scope": "Do not automatically restrict",
+      "note": "Routine restriction is generally not recommended",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK258640/"
+    },
+    {
+      "sweetener_id": "SW016",
+      "condition": "Duarte galactosemia",
+      "action": "NO AUTO BLOCK",
+      "scope": "Do not automatically restrict",
+      "note": "Routine restriction is generally not recommended",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK258640/"
+    },
+    {
+      "sweetener_id": "SW014",
+      "condition": "Congenital glucose-galactose malabsorption (GGM)",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Glucose transport is defective",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK22210/"
+    },
+    {
+      "sweetener_id": "SW017",
+      "condition": "Congenital glucose-galactose malabsorption (GGM)",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Galactose transport is defective",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK22210/"
+    },
+    {
+      "sweetener_id": "SW016",
+      "condition": "Congenital glucose-galactose malabsorption (GGM)",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Digestion produces glucose + galactose",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK22210/"
+    },
+    {
+      "sweetener_id": "SW001",
+      "condition": "Congenital glucose-galactose malabsorption (GGM)",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Contains glucose after digestion",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK22210/"
+    },
+    {
+      "sweetener_id": "SW015",
+      "condition": "Congenital glucose-galactose malabsorption (GGM)",
+      "action": "BLOCK",
+      "scope": "Strict restriction",
+      "note": "Digestion produces glucose",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK22210/"
+    },
+    {
+      "sweetener_id": "SW012",
+      "condition": "Congenital glucose-galactose malabsorption (GGM)",
+      "action": "REVIEW",
+      "scope": "Likely problematic",
+      "note": "Digestion produces glucose",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK22210/"
+    },
+    {
+      "sweetener_id": "SW008",
+      "condition": "Congenital glucose-galactose malabsorption (GGM)",
+      "action": "REVIEW",
+      "scope": "Likely problematic",
+      "note": "May yield glucose-containing digestion products",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK22210/"
+    },
+    {
+      "sweetener_id": "SW001",
+      "condition": "Congenital sucrase-isomaltase deficiency (CSID/GSID)",
+      "action": "BLOCK",
+      "scope": "Strong restriction",
+      "note": "Sucrose digestion is impaired",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/26163121/"
+    },
+    {
+      "sweetener_id": "SW015",
+      "condition": "Congenital sucrase-isomaltase deficiency (CSID/GSID)",
+      "action": "LIMIT",
+      "scope": "Per patient / residual enzyme activity",
+      "note": "Tolerance varies substantially",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/26163121/"
+    },
+    {
+      "sweetener_id": "SW012",
+      "condition": "Congenital sucrase-isomaltase deficiency (CSID/GSID)",
+      "action": "REVIEW",
+      "scope": "Specialist review",
+      "note": "Direct tolerance may vary",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/26163121/"
+    },
+    {
+      "sweetener_id": "SW011",
+      "condition": "Congenital trehalase deficiency",
+      "action": "BLOCK",
+      "scope": "Avoid",
+      "note": "Trehalose maldigestion can cause osmotic GI symptoms",
+      "source": "https://www.ncbi.nlm.nih.gov/gtr/conditions/C0268187/"
+    },
+    {
+      "sweetener_id": "SW016",
+      "condition": "Congenital lactase deficiency",
+      "action": "BLOCK",
+      "scope": "Strong restriction",
+      "note": "Severe lactose digestion defect",
+      "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/lactose-intolerance"
+    },
+    {
+      "sweetener_id": "SW016",
+      "condition": "Lactose intolerance / lactase non-persistence",
+      "action": "LIMIT",
+      "scope": "Soft tolerance value",
+      "note": "Many people tolerate ~12 g with no or mild symptoms",
+      "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/lactose-intolerance/eating-diet-nutrition"
+    },
+    {
+      "sweetener_id": "SW016",
+      "condition": "Secondary lactose intolerance",
+      "action": "LIMIT",
+      "scope": "Temporary / symptom-based",
+      "note": "No universal fixed amount",
+      "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/lactose-intolerance/treatment"
+    },
+    {
+      "sweetener_id": "SW020",
+      "condition": "Phenylketonuria (PKU / PAH deficiency)",
+      "action": "BLOCK",
+      "scope": "Avoid or count Phe strictly",
+      "note": "Aspartame supplies phenylalanine",
+      "source": "https://www.fda.gov/food/food-additives-petitions/aspartame-and-other-sweeteners-food"
+    },
+    {
+      "sweetener_id": "SW020",
+      "condition": "Non-PKU hyperphenylalaninemia requiring Phe restriction",
+      "action": "LIMIT",
+      "scope": "Patient-specific",
+      "note": "Aspartame is ~50% phenylalanine by weight",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK1504/"
+    },
+    {
+      "sweetener_id": "SW020",
+      "condition": "BH4-related hyperphenylalaninemia requiring Phe restriction",
+      "action": "LIMIT",
+      "scope": "Patient-specific",
+      "note": "Count phenylalanine from aspartame",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK1504/"
+    },
+    {
+      "sweetener_id": "SW020",
+      "condition": "Tyrosinemia type I",
+      "action": "LIMIT",
+      "scope": "Metabolic-specialist directed",
+      "note": "No universal aspartame gram limit",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK1515/"
+    },
+    {
+      "sweetener_id": "SW020",
+      "condition": "Tyrosinemia type II",
+      "action": "LIMIT",
+      "scope": "Metabolic-specialist directed",
+      "note": "No universal aspartame gram limit",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK608431/"
+    },
+    {
+      "sweetener_id": "SW013",
+      "condition": "Fructose malabsorption",
+      "action": "LIMIT",
+      "scope": "Short elimination / reintroduction",
+      "note": "No universal clinical maximum",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5492024/"
+    },
+    {
+      "sweetener_id": "SW006",
+      "condition": "Fructose malabsorption",
+      "action": "CAUTION",
+      "scope": "Symptom-based",
+      "note": "Can worsen GI symptoms",
+      "source": "https://www.monashfodmap.com/about-fodmap-and-ibs/frequently-asked-questions/"
+    },
+    {
+      "sweetener_id": "SW006",
+      "condition": "IBS / low-FODMAP phase",
+      "action": "LIMIT",
+      "scope": "Low-FODMAP screening threshold",
+      "note": "Not a universal toxicological limit",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12473091/"
+    },
+    {
+      "sweetener_id": "SW007",
+      "condition": "IBS / low-FODMAP phase",
+      "action": "LIMIT",
+      "scope": "Low-FODMAP screening threshold",
+      "note": "Not a universal toxicological limit",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12473091/"
+    },
+    {
+      "sweetener_id": "SW005",
+      "condition": "IBS / polyol sensitivity",
+      "action": "CAUTION",
+      "scope": "Strict low-FODMAP phase",
+      "note": "No validated xylitol-specific cap",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9678936/"
+    },
+    {
+      "sweetener_id": "SW008",
+      "condition": "IBS / polyol sensitivity",
+      "action": "CAUTION",
+      "scope": "Strict low-FODMAP phase",
+      "note": "No validated maltitol-specific cap",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9678936/"
+    },
+    {
+      "sweetener_id": "SW010",
+      "condition": "IBS / polyol sensitivity",
+      "action": "CAUTION",
+      "scope": "Strict low-FODMAP phase",
+      "note": "No validated isomalt-specific cap",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9678936/"
+    },
+    {
+      "sweetener_id": "SW009",
+      "condition": "IBS / polyol sensitivity",
+      "action": "CAUTION",
+      "scope": "Strict low-FODMAP phase",
+      "note": "No validated lactitol-specific cap",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9678936/"
+    },
+    {
+      "sweetener_id": "SW016",
+      "condition": "IBS with lactose malabsorption / strict low-FODMAP phase",
+      "action": "LIMIT",
+      "scope": "Low-FODMAP screening threshold",
+      "note": "Only relevant when lactose is a trigger",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12473091/"
+    },
+    {
+      "sweetener_id": "SW013",
+      "condition": "IBS / excess-fructose sensitivity",
+      "action": "LIMIT",
+      "scope": "Low-FODMAP screening threshold",
+      "note": "Context-dependent threshold",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12473091/"
+    },
+    {
+      "sweetener_id": "SW004",
+      "condition": "GI tolerance / diarrhea risk",
+      "action": "LIMIT",
+      "scope": "General GI safety / dose constraint",
+      "note": "EFSA value; not IBS-specific",
+      "source": "https://www.efsa.europa.eu/en/plain-language-summary/re-evaluation-erythritol-e-968-food-additive"
+    },
+    {
+      "sweetener_id": "SW001",
+      "condition": "Dumping syndrome",
+      "action": "LIMIT",
+      "scope": "Strongly reduce rapidly absorbed sugars",
+      "note": "Use dietary pattern rather than a sweetener-specific maximum",
+      "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/dumping-syndrome/eating-diet-nutrition"
+    },
+    {
+      "sweetener_id": "SW014",
+      "condition": "Dumping syndrome",
+      "action": "LIMIT",
+      "scope": "Strongly reduce rapidly absorbed sugars",
+      "note": "Use dietary pattern rather than a sweetener-specific maximum",
+      "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/dumping-syndrome/eating-diet-nutrition"
+    },
+    {
+      "sweetener_id": "SW013",
+      "condition": "Dumping syndrome",
+      "action": "LIMIT",
+      "scope": "Strongly reduce rapidly absorbed sugars",
+      "note": "Use dietary pattern rather than a sweetener-specific maximum",
+      "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/dumping-syndrome/eating-diet-nutrition"
+    },
+    {
+      "sweetener_id": "SW001",
+      "condition": "Reactive/postprandial hypoglycemia",
+      "action": "LIMIT",
+      "scope": "Total carbohydrate target",
+      "note": "Not a sucrose-only allowance",
+      "source": "https://www.kentcht.nhs.uk/leaflet/reactive-hypoglycaemia/"
+    },
+    {
+      "sweetener_id": "SW014",
+      "condition": "Reactive/postprandial hypoglycemia",
+      "action": "LIMIT",
+      "scope": "Total carbohydrate target",
+      "note": "Not a glucose-only allowance",
+      "source": "https://www.kentcht.nhs.uk/leaflet/reactive-hypoglycaemia/"
+    },
+    {
+      "sweetener_id": "SW013",
+      "condition": "Reactive/postprandial hypoglycemia",
+      "action": "LIMIT",
+      "scope": "Total carbohydrate target",
+      "note": "Not a fructose-only allowance",
+      "source": "https://www.kentcht.nhs.uk/leaflet/reactive-hypoglycaemia/"
+    },
+    {
+      "sweetener_id": "SW001",
+      "condition": "Diabetes mellitus type 1 or type 2",
+      "action": "SOFT PENALTY",
+      "scope": "Metabolic scoring",
+      "note": "Prefer lower carbohydrate / lower glycemic burden rather than automatic ban",
+      "source": "https://diabetesjournals.org/care/issue/49/Supplement_1"
+    },
+    {
+      "sweetener_id": "SW014",
+      "condition": "Diabetes mellitus type 1 or type 2",
+      "action": "SOFT PENALTY",
+      "scope": "Metabolic scoring",
+      "note": "Use carbohydrate/GI/calorie scoring",
+      "source": "https://diabetesjournals.org/care/issue/49/Supplement_1"
+    },
+    {
+      "sweetener_id": "SW013",
+      "condition": "Diabetes mellitus type 1 or type 2",
+      "action": "SOFT PENALTY",
+      "scope": "Metabolic scoring",
+      "note": "Use carbohydrate/GI/calorie scoring",
+      "source": "https://diabetesjournals.org/care/issue/49/Supplement_1"
+    },
+    {
+      "sweetener_id": "SW001",
+      "condition": "Glycogen storage disease type VI (Hers disease)",
+      "action": "LIMIT",
+      "scope": "Total simple-sugar allowance",
+      "note": "Not a sucrose-only allowance",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK5941/"
+    },
+    {
+      "sweetener_id": "SW013",
+      "condition": "Glycogen storage disease type VI (Hers disease)",
+      "action": "LIMIT",
+      "scope": "Total simple-sugar allowance",
+      "note": "Not a fructose-only allowance",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK5941/"
+    },
+    {
+      "sweetener_id": "SW016",
+      "condition": "Glycogen storage disease type VI (Hers disease)",
+      "action": "LIMIT",
+      "scope": "Total simple-sugar allowance",
+      "note": "Not a lactose-only allowance",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK5941/"
+    },
+    {
+      "sweetener_id": "SW047",
+      "condition": "Hypertension",
+      "action": "BLOCK",
+      "scope": "Strong avoid in conservative SweetFix mode",
+      "note": "Can raise blood pressure",
+      "source": "https://www.nccih.nih.gov/health/licorice-root"
+    },
+    {
+      "sweetener_id": "SW047",
+      "condition": "Chronic kidney disease / renal impairment",
+      "action": "BLOCK",
+      "scope": "Strong avoid",
+      "note": "Electrolyte/fluid complications can be worsened",
+      "source": "https://www.nccih.nih.gov/health/licorice-root"
+    },
+    {
+      "sweetener_id": "SW047",
+      "condition": "Cardiovascular disease",
+      "action": "BLOCK",
+      "scope": "Strong avoid",
+      "note": "May increase arrhythmia and blood-pressure risk",
+      "source": "https://www.nccih.nih.gov/health/licorice-root"
+    },
+    {
+      "sweetener_id": "SW047",
+      "condition": "Congestive heart failure",
+      "action": "BLOCK",
+      "scope": "Strong avoid",
+      "note": "Sodium/water retention and potassium loss are concerning",
+      "source": "https://www.nccih.nih.gov/health/licorice-root"
+    },
+    {
+      "sweetener_id": "SW047",
+      "condition": "Hypokalemia",
+      "action": "BLOCK",
+      "scope": "Avoid",
+      "note": "Can further lower potassium",
+      "source": "https://www.nccih.nih.gov/health/licorice-root"
+    },
+    {
+      "sweetener_id": "SW047",
+      "condition": "Primary aldosteronism / hyperaldosteronism",
+      "action": "BLOCK",
+      "scope": "Avoid",
+      "note": "Pseudo-mineralocorticoid effects may worsen condition",
+      "source": "https://www.nccih.nih.gov/health/licorice-root"
+    },
+    {
+      "sweetener_id": "SW047",
+      "condition": "Apparent mineralocorticoid excess / 11beta-HSD2 deficiency",
+      "action": "BLOCK",
+      "scope": "Avoid",
+      "note": "Acts on the same mineralocorticoid pathway",
+      "source": "https://www.nccih.nih.gov/health/licorice-root"
+    },
+    {
+      "sweetener_id": "SW047",
+      "condition": "Cirrhosis / significant chronic liver disease",
+      "action": "CAUTION",
+      "scope": "Avoid high exposure / review",
+      "note": "Fluid/electrolyte effects may matter",
+      "source": "https://www.nccih.nih.gov/health/licorice-root"
+    },
+    {
+      "sweetener_id": "SW047",
+      "condition": "Edema-producing disease",
+      "action": "CAUTION",
+      "scope": "Avoid high exposure / review",
+      "note": "Sodium and water retention can worsen edema",
+      "source": "https://www.nccih.nih.gov/health/licorice-root"
+    }
+  ]
+}

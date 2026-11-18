@@ -1,9 +1,17 @@
 import json
+import re
 from pathlib import Path
 
 
 DATABASE = Path(__file__).parent / "data" / "sweeteners.json"
 HEAT_FINDINGS = Path(__file__).parent / "data" / "heat_findings.json"
+UPPER_HEAT_BOUND = re.compile(r"<\s*(\d+(?:\.\d+)?)\s*°\s*C\b", re.I)
+
+
+def maximum_stability_temperature(note):
+    """Read only an explicit '< X °C' ceiling from the database field."""
+    match = UPPER_HEAT_BOUND.search(note)
+    return float(match.group(1)) if match else None
 
 
 def load_sweeteners():
@@ -14,58 +22,39 @@ def load_sweeteners():
 
     for item in sweeteners:
         research = findings.get(item["id"], {})
-        item["research_level"] = research.get("level", "no_new_match")
-        item["research_note"] = research.get(
-            "finding",
-            "No additional substance-specific time-temperature evidence was located in this research pass.",
-        )
-        item["research_sources"] = research.get("sources", [])
-        item["review_when_heated"] = research.get("review_when_heated", False)
-        item["exclude_when_baked"] = research.get("exclude_when_baked", False)
+        item["exclude_when_heated"] = research.get("exclude_when_heated", False)
+        item["max_stable_c"] = research.get("max_stable_c", maximum_stability_temperature(item["heat_stability"]))
+        item["temperature_review_c"] = research.get("temperature_review_c")
+        item["temperature_review_note"] = research.get("temperature_review_note", "")
     return sweeteners
 
 
-def screen_sweeteners(heat, sweeteners=None):
-    """Group database entries by the available heat evidence, not by final suitability."""
-    if heat not in {"baking", "hot", "none", "unknown"}:
-        raise ValueError(f"Unknown heat setting: {heat}")
+def screen_sweeteners(heated, sweeteners=None, recipe_temperature_c=None):
+    """Filter on qualitative heat loss or a genuine numeric stability maximum."""
+    if not isinstance(heated, bool):
+        raise ValueError("heated must be True or False")
+    if not heated:
+        return []
+    entries = sweeteners if sweeteners is not None else load_sweeteners()
+    filtered = []
+    for item in entries:
+        if item["id"] == "SW001":
+            continue
+        limit = item.get("max_stable_c")
+        above_limit = recipe_temperature_c is not None and limit is not None and recipe_temperature_c > limit
+        if item.get("exclude_when_heated") or above_limit:
+            filtered.append({**item, "filter_reason": "temperature_limit" if above_limit else "heat_loss"})
+    return filtered
 
-    results = {"excluded": [], "review": [], "candidate": [], "unscreened": []}
-    for item in sweeteners if sweeteners is not None else load_sweeteners():
-        entry = dict(item)
-        sweetener_id = entry["id"]
-        heat_note = entry["heat_stability"].casefold()
 
-        if sweetener_id == "SW001":
-            group = "excluded"
-            reason = "Sucrose is the reference sugar, not a replacement sweetener."
-        elif heat == "none":
-            group = "unscreened"
-            reason = "No heating is expected; heat stability does not filter this entry."
-        elif heat == "unknown":
-            group = "review"
-            reason = "Sweetener temperature exposure is unknown."
-        elif (
-            heat == "baking"
-            and "not heat stable" in heat_note
-            and "prolonged heating" in heat_note
-        ):
-            group = "excluded"
-            reason = "Database reports loss of sweetness during prolonged heating."
-        elif heat == "baking" and entry.get("exclude_when_baked"):
-            group = "excluded"
-            reason = "Published heating evidence shows loss of sweetness during baking-level heat."
-        elif entry.get("review_when_heated"):
-            group = "review"
-            reason = "New heat-loss measurements need a matched process before this can pass."
-        elif "heat stable; suitable for baking and hot processing" in heat_note:
-            group = "candidate"
-            reason = "Database describes this sweetener as stable for baking and hot processing."
-        else:
-            group = "review"
-            reason = "No matched time, temperature, and food-matrix evidence for this process."
-
-        entry["reason"] = reason
-        results[group].append(entry)
-
-    return results
+def temperature_review_sweeteners(recipe_temperature_c, sweeteners=None):
+    """Flag exceeded study conditions that are not valid hard stability limits."""
+    if recipe_temperature_c is None:
+        return []
+    entries = sweeteners if sweeteners is not None else load_sweeteners()
+    return [
+        item for item in entries
+        if item["id"] != "SW001"
+        and item.get("temperature_review_c") is not None
+        and recipe_temperature_c > item["temperature_review_c"]
+    ]

@@ -6,3 +6,6 @@ __pycache__/
 .pytest_cache/
 .vscode/
 .idea/
+~$*.xlsx
+_database_build/*.png
+*.inspect.ndjson
